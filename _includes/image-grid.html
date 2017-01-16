@@ -1,9 +1,12 @@
 <div class="container">
   <ul class="grid__wrapper">
+    {% for image in page.images %}
     <li class="grid__item">
       <img class="grid__image"
            src=""
+           data-original=""
            alt="">
     </li>
+    {% endfor %}
   </ul>
 </div>
