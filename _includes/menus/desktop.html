@@ -1,0 +1,19 @@
+<div class="desktop-menu device-hidden">
+  <nav>
+    <ul class="desktop-menu__parent">
+      {% for page in site.pages %}
+      <li>
+        <a class="primary-font" href="{{ page.url }}">{{ page.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="overlay-icons">
+      <svg class="grid-icon" id="overlay-hide">
+        <use xlink:href="#icon-grid-icon"></use>
+      </svg>
+      <svg class="line-icon" id="overlay-show">
+        <use xlink:href="#icon-line-icon"></use>
+      </svg>
+    </div>
+  </nav>
+</div>

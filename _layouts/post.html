@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<article class="post post-single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h2 class="post-title" itemprop="name headline">{{ page.title }}</h2>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time> {% if page.tags.first %}<span class="post-tags">{% include tag.svg %}{% for tag in page.tags %}<a href="/posts/{{ tag }}">{{ tag }}</a> {% endfor %}</span>{% endif %}</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+</article>

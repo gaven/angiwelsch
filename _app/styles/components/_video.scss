@@ -1,0 +1,79 @@
+.video__wrapper {
+  padding-top: 4.875em;
+  @include clearfix;
+
+  @include media(">desktop") {
+    padding: 7vh 1.25em 0 0;
+    lost-move: 1/6;
+    lost-column: 5/6 0;
+  }
+
+  @include media(">=large") {
+    lost-move: 1/8;
+    lost-column: 7/8;
+    padding-right: 2.25em;
+  }
+}
+
+.video__item {
+  @include media(">=tablet") {
+    lost-column: 1/2 2 20px;
+  }
+
+  @include media(">=desktop") {
+    lost-column: 1/3 3;
+  }
+
+  @include media(">=large") {
+    lost-column: 1/4 4;
+  }
+}
+
+.video__item {
+  margin-bottom: 25px;
+
+  > a:focus {
+    outline: 0;
+  }
+}
+
+.video__image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 3px 5px 0 rgba(204,204,204,.5);
+  cursor: pointer;
+  height: 190px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.video__title {
+  background: rgba(255, 255, 255, 0);
+  width: 100%;
+  height: 100%;
+  transition: background 0.3375s ease-in-out;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  &:hover > h4 {
+    opacity: 1;
+  }
+
+  > h4 {
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 1.18px;
+    padding-top: 25%;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.3375s ease-in-out;
+  }
+}
+
+.video__description {
+  text-transform: uppercase;
+  font-size: 12px;
+}

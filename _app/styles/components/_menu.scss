@@ -1,0 +1,96 @@
+.mobile-menu {
+  background-color: $white;
+  box-shadow: 0 2px 4px 0 rgba(204,204,204,0.50);
+  padding-top: 5.625em;
+  padding-bottom: 2.5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  transition: all 0.2s ease-out;
+  z-index: 50;
+}
+
+&.active {
+  transform: translateY(0%);
+}
+
+%menu-styles {
+  text-transform: uppercase;
+  letter-spacing: 1.18px;
+}
+
+.mobile-menu__parent {
+  & > li {
+    border-bottom: 1px solid $light-grey;
+    @extend %menu-styles;
+    padding: 10px 0;
+
+    @include media(">=tablet") {
+      text-align: center;
+    }
+  }
+
+  a {
+    display: block;
+    width: 100%;
+  }
+}
+
+.desktop-menu {
+  & nav {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+.desktop-menu__parent {
+  & > li {
+    @extend %menu-styles;
+    margin-bottom: 15px;
+
+    @include media(">=large") {
+      text-align: center;
+    }
+
+    &:last-child {
+      margin-bottom: 24px;
+    }
+  }
+
+  a {
+    line-height: 1em;
+    transition: color 0.2s ease-in-out;
+    display: inline-block;
+    padding-bottom: 3px;
+
+    &:hover {
+      color: $dark-grey;
+    }
+  }
+}
+
+.page-active > a{
+  border-bottom: 2px solid rgba(231, 130, 137, 0.75);
+}
+
+.overlay-icons {
+  display: flex;
+
+  @include media(">=large") {
+    justify-content: center;
+  }
+}
+
+.grid-icon,
+.line-icon {
+  width: 23px;
+  height: 23px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.grid-icon {
+  margin-right: 5px;
+}

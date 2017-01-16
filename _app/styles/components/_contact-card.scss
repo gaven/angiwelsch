@@ -1,0 +1,35 @@
+.contact__card {
+  padding-top: 1.563em;
+  padding-bottom: 1.875em;
+  overflow: hidden;
+
+  @include media(">=tablet") {
+    lost-column: 1/2 0;
+    padding: 3.063em 0 0;
+  }
+}
+
+.contact__headline {
+  font-size: .875em;
+  font-weight: 400;
+  letter-spacing: 0.65px;
+  margin: 0 0 1.438em 0;
+  position: relative;
+  text-transform: uppercase;
+
+  &::after {
+    border-top: 1px solid rgba(237, 162, 167, 0.5);
+    content: '';
+    margin-left: 8px;
+    position: absolute;
+    top: 6px;
+    width: 100%;
+  }
+}
+
+.contact__info {
+  line-height: 1.91;
+  text-transform: uppercase;
+  font-size: .875em;
+  letter-spacing: 0.65px;
+}

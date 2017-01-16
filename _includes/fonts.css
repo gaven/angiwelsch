@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Gotham-Medium";
+  font-weight: normal;
+  font-style: normal;
+  src: local("Gotham Medium"),
+    url("/fonts/Gotham-Medium.woff2") format("woff2"),
+    url("/fonts/Gotham-Medium.woff") format("woff"),
+    url("/fonts/Gotham-Medium.ttf") format("truetype"),
+    url("/fonts/Gotham-Medium.eot") format("embedded-opentype");
+}
+
+@font-face {
+	font-family: "Sentinel";
+  font-weight: normal;
+  font-style: normal;
+	src: local("Sentinel")
+		url('/fonts/Sentinel-Book.woff2') format('woff2'),
+		url('/fonts/Sentinel-Book.woff') format('woff'),
+		url('/fonts/Sentinel-Book.ttf') format('truetype'),
+    url('/fonts/Sentinel-Book.eot') format('embedded-opentype');
+}

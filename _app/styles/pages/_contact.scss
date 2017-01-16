@@ -1,0 +1,109 @@
+.contact {
+  max-width: 100%;
+  margin-top: 5.625em;
+  margin-bottom: 5.625em;
+
+  @include media(">=tablet") {
+    margin-top: 6.625em;
+  }
+
+  @include media(">desktop") {
+    margin-top: 7.5vh;
+    lost-column: 5/6 0;
+    lost-move: 1/6;
+  }
+
+  @include media(">=large") {
+    lost-move: 1/8;
+  }
+}
+
+.contact__bio {
+  padding-bottom: 5.313em;
+  position: relative;
+  @include clearfix;
+
+  @include media(">=tablet") {
+    padding-bottom: 5em;
+  }
+
+  @include media(">=desktop") {
+    padding-bottom: 60px;
+  }
+
+  & > h2 {
+    color: $color-primary;
+    font-family: 'Sentinel';
+    font-size: 1.875em;
+    font-weight: normal;
+    line-height: 1.2;
+
+    @include media(">=phone") {
+      font-size: 34px;
+      line-height: 1.19;
+    }
+
+    @include media(">=tablet") {
+      max-width: 100%;
+      font-size: 2.125em;
+      line-height: 1.38;
+    }
+
+    @include media(">=desktop") {
+      max-width: 90%;
+      font-size: 2.5em;
+    }
+  }
+}
+
+.social-icons {
+  position: absolute;
+  bottom: 25px;
+  display: flex;
+  width: 7.813em;
+  justify-content: space-between;
+
+  @include media(">=desktop") {
+    right: 0;
+    top: 8px;
+    width: 2em;
+    flex-direction: column;
+    height: 7.813em;
+  }
+
+  @include media(">desktop") {
+    top: 10px;
+  }
+}
+
+.social-icons svg {
+  width: 32px;
+  height: 32px;
+}
+
+.contact__copy {
+  max-width: 100%;
+  @include clearfix;
+
+  & > h4 {
+    font-size: 0.75em;
+    line-height: 1.58;
+    color: $color-primary;
+    font-family: $font-sans-serif;
+    letter-spacing: 0.6px;
+    font-weight: 400;
+
+    @include media(">=tablet") {
+      font-size: 0.875em;
+    }
+  }
+}
+
+.image-wrapper {
+  max-width: 100%;
+
+  @include media(">=tablet") {
+    lost-column: 1/2 0;
+    padding-top: 3.063em;
+  }
+}

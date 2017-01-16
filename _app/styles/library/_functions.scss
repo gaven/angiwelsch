@@ -1,0 +1,10 @@
+@function find-last-idx($string, $needle) {
+  $idx: str-index($string, $needle);
+
+  @if $idx {
+    $part: str-slice($string, $idx + 1);
+    @return $idx + find-last-idx($part, $needle);
+  } @else {
+    @return 0
+  }
+}

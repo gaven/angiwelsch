@@ -1,0 +1,21 @@
+<svg viewBox="87 405 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <rect id="path-1" x="0" y="0" width="23" height="23"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="23" height="23" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="2.46428571" y="3.28571429" width="18.0714286" height="7.39285714"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="18.0714286" height="7.39285714" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <rect id="path-5" x="2.46428571" y="12.3214286" width="18.0714286" height="7.39285714"></rect>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="18.0714286" height="7.39285714" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+    </defs>
+    <g id="Line-Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(98.500000, 416.500000) rotate(-90.000000) translate(-98.500000, -416.500000) translate(87.000000, 405.000000)">
+        <use id="Rectangle-214" stroke="#231F20" mask="url(#mask-2)" stroke-width="1.6" xlink:href="#path-1"></use>
+        <use id="Rectangle-214" stroke="#231F20" mask="url(#mask-4)" stroke-width="1.6" xlink:href="#path-3"></use>
+        <use id="Rectangle-214-Copy-3" stroke="#231F20" mask="url(#mask-6)" stroke-width="1.6" xlink:href="#path-5"></use>
+    </g>
+</svg>

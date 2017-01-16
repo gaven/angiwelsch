@@ -1,0 +1,45 @@
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.margin-reset {
+  margin: 0;
+}
+
+.padding-reset {
+  padding: 0;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mobile-hidden {
+  @include media("<tablet") {
+    display: none;
+  }
+}
+
+.device-hidden {
+  @include media("<=desktop") {
+    display: none;
+  }
+}
+
+.desktop-hidden {
+  @include media(">desktop") {
+    display: none;
+  }
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}

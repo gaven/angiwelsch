@@ -1,0 +1,17 @@
+# Site settings
+title: Angi Welsch
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+twitter_username: gavenheim
+github_username: gavenheim
+
+# Build settings
+markdown: kramdown
+exclude:
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.*
+  - package.json
+  - README.md
+  - gulp
