@@ -1,6 +1,6 @@
 # Site settings
 title: Angi Welsch
-baseurl: "" # the subpath of your site, e.g. /blog
+thumb_prefix: "/thumbs" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 twitter_username: gavenheim
 github_username: gavenheim
@@ -15,3 +15,9 @@ exclude:
   - package.json
   - README.md
   - gulp
+
+mini_magick:
+  thumbnail:
+      source: images/uploads/
+      destination: thumbs/images/uploads/
+      resize: "630"

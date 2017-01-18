@@ -3,7 +3,8 @@
     {% for image in page.images %}
     <li class="grid__item">
       <img class="grid__image"
-           src="{{ image }}">
+           src="{{ image | prepend: site.thumb_prefix }}"
+           data-original="{{ image }}">
     </li>
     {% endfor %}
   </ul>

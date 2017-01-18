@@ -1,22 +1,21 @@
-// import isotope from 'isotope-layout';
-import loaded from 'imagesloaded';
+import Masonry from 'masonry-layout';
+import 'imagesloaded';
 
 class Grid {
   constructor () {
-    $(window).on('load', this.duplicateImage());
+    $(window).on('load', this.gridInit());
   }
 
-  duplicateImage () {
+  gridInit () {
     const $wrapper = $('.grid__wrapper');
-    const $items = $wrapper.find('.grid__item');
-
-    $items.each(function () {
-      $(this).loaded(() => {
-        const $image = $(this).find('.grid__image');
+    const $item = $wrapper.find('.grid__item');
+    $item.each(function () {
+      $(this).imagesLoaded(function () {
+        $item.addClass('loaded');
+        
       });
     });
   }
 }
-
 
 export default Grid;
