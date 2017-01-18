@@ -12,7 +12,6 @@ class Grid {
     $item.each(function () {
       $(this).imagesLoaded(function () {
         $item.addClass('loaded');
-        
       });
     });
   }
