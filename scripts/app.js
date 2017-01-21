@@ -282,6 +282,12 @@
 
 	      $('html').removeClass('no-scroll');
 	    }
+	  }, {
+	    key: 'destroy',
+	    value: function destroy() {
+	      this.$el.off('click', this.overlay);
+	      $('#overlay-hide').off('click', this.close);
+	    }
 	  }]);
 
 	  return Grid;

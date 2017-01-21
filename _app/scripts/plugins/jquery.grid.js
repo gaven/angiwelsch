@@ -118,6 +118,11 @@ class Grid {
 
     $('html').removeClass('no-scroll');
   }
+
+  destroy () {
+    this.$el.off('click', this.overlay);
+    $('#overlay-hide').off('click', this.close);
+  }
 }
 
 plugify('masonry_grid', Grid, {

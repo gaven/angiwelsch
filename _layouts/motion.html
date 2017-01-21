@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    <main class="page-wrapper">
+      <div id="svg-defs">
+        {% include svg-defs.html %}
+      </div>
+      {% include header.html %}
+      <div class="container">
+        <ul class="video__wrapper fade-in">
+          {% for video in site.data.videos %}
+          <li class="video__item">
+            <a href="{{ video.url }}">
+              <div class="video__image" style="background-image: url('')">
+                <div class="video__title text-center">
+                  <h4 class="primary-font">{{ video.title }}</h4>
+                </div>
+              </div>
+            </a>
+            <span class="primary-font video__description">Director: {{ video.director }}</span>
+            <span class="primary-font video__description">DP: {{ video.dp }}</span>
+            <span class="primary-font video__description">Stylist {{ video.stylist }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% include footer.html %}
+    </main>
+  </body>
+</html>
