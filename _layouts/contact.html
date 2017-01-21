@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    <main class="page-wrapper">
+      <div id="svg-defs">
+        {% include svg-defs.html %}
+      </div>
+      {% include header.html %}
+      <section class="contact fade-in">
+        <div class="container--contact">
+          <div class="contact__bio">
+            <h2>{{ page.bio }}</h2>
+            <div class="social-icons">
+              <a href="mailto:{{ site.email }}">
+                <svg class="social-icons__mail">
+                  <use xlink:href="#icon-mail"></use>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/{{ site.instagram_username }}">
+                <svg class="social-icons__instagram">
+                  <use xlink:href="#icon-instagram"></use>
+                </svg>
+              <a href="{{site.tumblr_username}}.tumblr.com">
+                <svg class="social-icons__tumblr">
+                  <use xlink:href="#icon-tumblr"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact__copy">
+            <h4 class="mobile-hidden">CLIENTS INCLUDE:
+              {% for client in page.clients %}
+                {% if forloop.last %}
+                  {{ client }}
+                {% else %}
+                  {{ client }},
+                {% endif %}
+              {% endfor %}
+            </h4>
+
+            <div class="contact__card">
+              <h4 class="primary-font contact__headline">Contact Info</h4>
+              <ul class="contact__info primary-font">
+                <li>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                <li>Phone: {{ site.phone }}</li>
+                <li><a href="{{ site.tumblr_username }}.tumblr.com"></a>{{ site.tumblr_username }}.tumblr.com</li>
+              </ul>
+            </div>
+
+            <div class="image-wrapper">
+                <img
+                  src="<?php echo $image->resize(399)->url() ?>" alt="Profile Image of Angi Welsch"
+                  srcset="<?php echo $image->resize(798)->url() ?> 2x,
+                  <?php echo $image->resize(1197)->url() ?> 3x"
+                >
+            </div>
+          </div>
+        </div>
+      </section>
+      {% include footer.html %}
+    </main>
+  </body>
+</html>

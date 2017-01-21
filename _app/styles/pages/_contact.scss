@@ -83,6 +83,7 @@
 
 .contact__copy {
   max-width: 100%;
+  text-transform: uppercase;
   @include clearfix;
 
   & > h4 {

@@ -1,9 +1,12 @@
 # Site settings
 title: Angi Welsch
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
-twitter_username: gavenheim
-github_username: gavenheim
+thumb_small: "/thumbs/small"
+thumb_large: "/thumbs/large"
+
+email: angiwelsch@gmail.com
+phone: (703) 505-9244
+instagram_username: angi_welsch
+tumblr_username: angiwelsch
 
 # Build settings
 markdown: kramdown
@@ -15,3 +18,13 @@ exclude:
   - package.json
   - README.md
   - gulp
+
+mini_magick:
+  thumbnail:
+      source: images/uploads/
+      destination: thumbs/small/images/uploads/
+      resize: "630"
+  large:
+      source: images/uploads/
+      destination: thumbs/large/images/uploads/
+      resize: "x1304"

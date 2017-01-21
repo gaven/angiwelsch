@@ -1,11 +1,10 @@
 <div class="container">
-  <ul class="grid__wrapper">
+  <ul class="grid__wrapper fade-in">
     {% for image in page.images %}
     <li class="grid__item">
       <img class="grid__image"
-           src=""
-           data-original="{{ image }}"
-           alt="">
+           src="{{ image | prepend: site.thumb_small }}"
+           data-original="{{ image | prepend: site.thumb_large }}">
     </li>
     {% endfor %}
   </ul>
