@@ -12,7 +12,7 @@
           {% for video in site.data.videos %}
           <li class="video__item">
             <a href="{{ video.url }}">
-              <div class="video__image" style="background-image: url('')">
+              <div class="video__image" style="background-image: url('{{ video.preview_image }}')">
                 <div class="video__title text-center">
                   <h4 class="primary-font">{{ video.title }}</h4>
                 </div>
