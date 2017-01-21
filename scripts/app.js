@@ -48,16 +48,11 @@
 
 	__webpack_require__(1);
 
-	var _jqueryGrid = __webpack_require__(3);
-
-	var _jqueryGrid2 = _interopRequireDefault(_jqueryGrid);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	__webpack_require__(3);
 
 	$(function () {
 	  $('.site-header__toggle').toggle();
-
-	  new _jqueryGrid2.default();
+	  $('#overlay-show').masonry_grid();
 	});
 
 /***/ },
@@ -152,10 +147,6 @@
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	__webpack_require__(4);
@@ -168,34 +159,143 @@
 
 	var _jqueryBridget2 = _interopRequireDefault(_jqueryBridget);
 
+	var _plugify = __webpack_require__(2);
+
+	var _plugify2 = _interopRequireDefault(_plugify);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var Grid = function () {
-	  function Grid() {
+	  function Grid(el, options) {
 	    _classCallCheck(this, Grid);
 
+	    this.$el = el;
+	    this.options = options;
+
+	    this.$gridImage = $(this.options.gridImage);
+	    this.$gridItem = $(this.options.gridItem);
+	    this.$gridWrapper = $(this.options.gridWrapper);
+
+	    this.$overlayItem = $(this.options.overlayItem);
+	    this.$overlayWrapper = $(this.options.overlayWrapper);
+	    this.$overlayContainer = $(this.options.overlayContainer);
+
 	    (0, _jqueryBridget2.default)('masonry', _masonryLayout2.default, $);
-	    $(window).on('load', this.gridInit());
+	    $(window).on('load', $.proxy(this.init, this));
+	    this.$el.on('click', $.proxy(this.overlay, this));
+	    $('#overlay-hide').on('click', $.proxy(this.close, this));
 	  }
 
 	  _createClass(Grid, [{
-	    key: 'gridInit',
-	    value: function gridInit() {
-	      var $wrapper = $('.grid__wrapper');
-	      var $item = $wrapper.find('.grid__item');
-	      $wrapper.imagesLoaded(function () {
-	        $item.addClass('loaded');
-	        $wrapper.masonry();
+	    key: 'init',
+	    value: function init() {
+	      var _this = this;
+
+	      this.$gridWrapper.imagesLoaded(function () {
+	        _this.$gridItem.addClass('loaded');
+	        _this.$gridWrapper.masonry();
 	      });
+	      this.clone();
+	      this.alter();
+	      this.openImage();
+	    }
+	  }, {
+	    key: 'clone',
+	    value: function clone() {
+	      this.$gridItem.each(function () {
+	        $(this).clone().appendTo('.overlay__wrapper');
+	      });
+	    }
+	  }, {
+	    key: 'alter',
+	    value: function alter() {
+	      var $overlayItem = $(this.options.overlayWrapper).find(this.options.gridItem);
+	      var $overlayImage = $overlayItem.find(this.options.gridImage);
+
+	      $overlayItem.each(function () {
+	        $(this).removeClass('grid__item').addClass('overlay__item');
+	      });
+
+	      $overlayImage.each(function () {
+	        var data = $(this).attr('data-original');
+	        $(this).attr('src', data).removeClass('grid__image').addClass('overlay__image');
+	      });
+	    }
+	  }, {
+	    key: 'overlay',
+	    value: function overlay(e) {
+	      if (e) {
+	        e.preventDefault();
+	      }
+	      this.open();
+	    }
+	  }, {
+	    key: 'openImage',
+	    value: function openImage() {
+	      this.$gridImage.each(function () {
+	        $(this).on('click', function (e) {
+	          if (e) {
+	            e.preventDefault();
+	          }
+
+	          var src = $(this).closest('li').index() + 1;
+	          var dist = $('.overlay__item:nth-child(' + src + ')').offset().left;
+	          var left = 229;
+
+	          if ($(window).width() > 1024) {
+	            $('#overlay').scrollLeft(dist - left).removeClass('visibility-hidden');
+
+	            setTimeout(function () {
+	              $('.overlay__item').addClass('active');
+	            }, 675);
+
+	            $('.overlay__wrapper').removeClass('fade-out fade-in');
+
+	            setTimeout(function () {
+	              $('html').addClass('no-scroll');
+	            }, 675);
+	          }
+	        });
+	      });
+	    }
+	  }, {
+	    key: 'open',
+	    value: function open() {
+	      var _this2 = this;
+
+	      this.$overlayContainer.scrollLeft(0).removeClass('visibility-hidden');
+	      this.$overlayWrapper.removeClass('fade-out');
+	      setTimeout(function () {
+	        $(_this2.options.overlayItem).addClass(_this2.options.activated);
+	      }, 675);
+	    }
+	  }, {
+	    key: 'close',
+	    value: function close() {
+	      this.$overlayWrapper.addClass('fade-out');
+	      $(this.options.overlayItem).removeClass(this.options.activated);
+	      this.$overlayContainer.delay(675).fadeTo(600, 0, function () {
+	        $(this).addClass('visibility-hidden').css('opacity', '1').scrollLeft(0);
+	      });
+
+	      $('html').removeClass('no-scroll');
 	    }
 	  }]);
 
 	  return Grid;
 	}();
 
-	exports.default = Grid;
+	(0, _plugify2.default)('masonry_grid', Grid, {
+	  gridWrapper: '.grid__wrapper',
+	  gridItem: '.grid__item',
+	  gridImage: '.grid__image',
+	  overlayWrapper: '.overlay__wrapper',
+	  overlayItem: '.overlay__item',
+	  overlayContainer: '#overlay',
+	  activated: 'active'
+	});
 
 /***/ },
 /* 4 */

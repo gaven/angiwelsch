@@ -1,8 +1,7 @@
 import './plugins/jquery.toggle.js';
-import Grid from './plugins/jquery.grid.js';
+import './plugins/jquery.grid.js';
 
 $(() => {
   $('.site-header__toggle').toggle();
-
-  new Grid;
+  $('#overlay-show').masonry_grid();
 });
