@@ -43,6 +43,7 @@
     "imagesloaded": "^4.1.1",
     "jquery-bridget": "^2.0.1",
     "lost": "^8.0.0",
+    "magnific-popup": "^1.1.0",
     "masonry-layout": "^4.1.1",
     "path": "^0.12.7",
     "require-dir": "^0.3.1",

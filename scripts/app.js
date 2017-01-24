@@ -50,9 +50,16 @@
 
 	__webpack_require__(3);
 
+	var _activeNav = __webpack_require__(15);
+
+	var _activeNav2 = _interopRequireDefault(_activeNav);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	$(function () {
 	  $('.site-header__toggle').toggle();
 	  $('#overlay-show').masonry_grid();
+	  new _activeNav2.default();
 	});
 
 /***/ },
@@ -12900,6 +12907,47 @@
 		}
 		return module;
 	};
+
+/***/ },
+/* 15 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Active = function () {
+	  function Active() {
+	    _classCallCheck(this, Active);
+
+	    this.match();
+	  }
+
+	  _createClass(Active, [{
+	    key: 'match',
+	    value: function match() {
+	      var current = window.location.pathname;
+
+	      $('.desktop-menu__parent > li').find('a').each(function () {
+	        var $el = $(this);
+
+	        if ($el.attr('href') === current) {
+	          $el.addClass('active');
+	        }
+	      });
+	    }
+	  }]);
+
+	  return Active;
+	}();
+
+	exports.default = Active;
 
 /***/ }
 /******/ ]);

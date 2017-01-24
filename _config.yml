@@ -3,11 +3,6 @@ title: Angi Welsch
 thumb_small: "/thumbs/small"
 thumb_large: "/thumbs/large"
 
-email: angiwelsch@gmail.com
-phone: (703) 505-9244
-instagram_username: angi_welsch
-tumblr_username: angiwelsch
-
 # Build settings
 markdown: kramdown
 exclude:
@@ -18,6 +13,8 @@ exclude:
   - package.json
   - README.md
   - gulp
+
+permalink: pretty
 
 mini_magick:
   thumbnail:

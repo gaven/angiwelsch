@@ -1,5 +1,5 @@
 ---
 layout: default
 title: Lifestyle
-active: true
+order: 2
 ---
