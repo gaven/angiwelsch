@@ -1,10 +1,13 @@
 <div class="desktop-menu device-hidden">
   <nav>
     <ul class="desktop-menu__parent">
-      {% for page in site.pages %}
-      <li>
-        <a class="primary-font" href="{{ page.url }}">{{ page.title }}</a>
-      </li>
+      {% assign sorted = site.pages | sort: 'order' %}
+      {% for item in sorted %}
+        {% unless item.title == 'Feed' %}
+          <li>
+            <a class="primary-font" href="{{ item.url }}">{{ item.title }}</a>
+          </li>
+        {% endunless %}
       {% endfor %}
     </ul>
     <div class="overlay-icons">

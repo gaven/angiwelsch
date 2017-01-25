@@ -65,14 +65,14 @@
     display: inline-block;
     padding-bottom: 3px;
 
+    &.active {
+      border-bottom: 2px solid rgba(231, 130, 137, 0.75);
+    }
+
     &:hover {
       color: $dark-grey;
     }
   }
-}
-
-.page-active > a{
-  border-bottom: 2px solid rgba(231, 130, 137, 0.75);
 }
 
 .overlay-icons {

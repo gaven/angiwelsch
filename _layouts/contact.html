@@ -12,16 +12,16 @@
           <div class="contact__bio">
             <h2>{{ page.bio }}</h2>
             <div class="social-icons">
-              <a href="mailto:{{ site.email }}">
+              <a href="mailto:{{ page.email }}">
                 <svg class="social-icons__mail">
                   <use xlink:href="#icon-mail"></use>
                 </svg>
               </a>
-              <a href="https://www.instagram.com/{{ site.instagram_username }}">
+              <a href="https://www.instagram.com/{{ page.instagram_username }}">
                 <svg class="social-icons__instagram">
                   <use xlink:href="#icon-instagram"></use>
                 </svg>
-              <a href="{{site.tumblr_username}}.tumblr.com">
+              <a href="{{page.tumblr_username}}.tumblr.com">
                 <svg class="social-icons__tumblr">
                   <use xlink:href="#icon-tumblr"></use>
                 </svg>
@@ -43,18 +43,16 @@
             <div class="contact__card">
               <h4 class="primary-font contact__headline">Contact Info</h4>
               <ul class="contact__info primary-font">
-                <li>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-                <li>Phone: {{ site.phone }}</li>
-                <li><a href="{{ site.tumblr_username }}.tumblr.com"></a>{{ site.tumblr_username }}.tumblr.com</li>
+                <li>Email: <a href="mailto:{{ page.email }}">{{ page.email }}</a></li>
+                <li>Phone: {{ page.phone }}</li>
+                <li><a href="http://{{ page.tumblr_username }}.tumblr.com">{{ page.tumblr_username }}.tumblr.com</a></li>
               </ul>
             </div>
 
             <div class="image-wrapper">
-                <img
-                  src="<?php echo $image->resize(399)->url() ?>" alt="Profile Image of Angi Welsch"
-                  srcset="<?php echo $image->resize(798)->url() ?> 2x,
-                  <?php echo $image->resize(1197)->url() ?> 3x"
-                >
+              {% if page.image != nil %}
+                <img src="{{ page.image }}" alt="Profile Image of Angi Welsch">
+              {% endif %}
             </div>
           </div>
         </div>
