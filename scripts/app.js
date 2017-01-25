@@ -52,7 +52,9 @@
 
 	__webpack_require__(15);
 
-	var _activeNav = __webpack_require__(16);
+	__webpack_require__(16);
+
+	var _activeNav = __webpack_require__(17);
 
 	var _activeNav2 = _interopRequireDefault(_activeNav);
 
@@ -60,7 +62,8 @@
 
 	$(function () {
 	  $('.site-header__toggle').toggle();
-	  $('#overlay-show').masonry_grid();
+	  $(window).masonry_grid();
+	  $(window).overlay();
 
 	  $('.video__item > a').magnificPopup({
 	    type: 'iframe',
@@ -190,18 +193,11 @@
 	    this.$el = el;
 	    this.options = options;
 
-	    this.$gridImage = $(this.options.gridImage);
 	    this.$gridItem = $(this.options.gridItem);
 	    this.$gridWrapper = $(this.options.gridWrapper);
 
-	    this.$overlayItem = $(this.options.overlayItem);
-	    this.$overlayWrapper = $(this.options.overlayWrapper);
-	    this.$overlayContainer = $(this.options.overlayContainer);
-
 	    (0, _jqueryBridget2.default)('masonry', _masonryLayout2.default, $);
-	    $(window).on('load', $.proxy(this.init, this));
-	    this.$el.on('click', $.proxy(this.overlay, this));
-	    $('#overlay-hide').on('click', $.proxy(this.close, this));
+	    this.$el.on('load', $.proxy(this.init, this));
 	  }
 
 	  _createClass(Grid, [{
@@ -213,96 +209,6 @@
 	        _this.$gridItem.addClass('loaded');
 	        _this.$gridWrapper.masonry();
 	      });
-	      this.clone();
-	      this.alter();
-	      this.openImage();
-	    }
-	  }, {
-	    key: 'clone',
-	    value: function clone() {
-	      this.$gridItem.each(function () {
-	        $(this).clone().appendTo('.overlay__wrapper');
-	      });
-	    }
-	  }, {
-	    key: 'alter',
-	    value: function alter() {
-	      var $overlayItem = $(this.options.overlayWrapper).find(this.options.gridItem);
-	      var $overlayImage = $overlayItem.find(this.options.gridImage);
-
-	      $overlayItem.each(function () {
-	        $(this).removeClass('grid__item').addClass('overlay__item');
-	      });
-
-	      $overlayImage.each(function () {
-	        var data = $(this).attr('data-original');
-	        $(this).attr('src', data).removeClass('grid__image').addClass('overlay__image');
-	      });
-	    }
-	  }, {
-	    key: 'overlay',
-	    value: function overlay(e) {
-	      if (e) {
-	        e.preventDefault();
-	      }
-	      this.open();
-	    }
-	  }, {
-	    key: 'openImage',
-	    value: function openImage() {
-	      this.$gridImage.each(function () {
-	        $(this).on('click', function (e) {
-	          if (e) {
-	            e.preventDefault();
-	          }
-
-	          var src = $(this).closest('li').index() + 1;
-	          var dist = $('.overlay__item:nth-child(' + src + ')').offset().left;
-	          var left = 229;
-
-	          if ($(window).width() > 1024) {
-	            $('#overlay').scrollLeft(dist - left).removeClass('visibility-hidden');
-
-	            setTimeout(function () {
-	              $('.overlay__item').addClass('active');
-	            }, 675);
-
-	            $('.overlay__wrapper').removeClass('fade-out fade-in');
-
-	            setTimeout(function () {
-	              $('html').addClass('no-scroll');
-	            }, 675);
-	          }
-	        });
-	      });
-	    }
-	  }, {
-	    key: 'open',
-	    value: function open() {
-	      var _this2 = this;
-
-	      this.$overlayContainer.scrollLeft(0).removeClass('visibility-hidden');
-	      this.$overlayWrapper.removeClass('fade-out');
-	      setTimeout(function () {
-	        $(_this2.options.overlayItem).addClass(_this2.options.activated);
-	      }, 675);
-	    }
-	  }, {
-	    key: 'close',
-	    value: function close() {
-	      this.$overlayWrapper.addClass('fade-out');
-	      $(this.options.overlayItem).removeClass(this.options.activated);
-	      this.$overlayContainer.delay(675).fadeTo(600, 0, function () {
-	        $(this).addClass('visibility-hidden').css('opacity', '1').scrollLeft(0);
-	      });
-
-	      $('html').removeClass('no-scroll');
-	    }
-	  }, {
-	    key: 'destroy',
-	    value: function destroy() {
-	      this.$el.off('click', this.overlay);
-	      $('#overlay-hide').off('click', this.close);
 	    }
 	  }]);
 
@@ -311,12 +217,7 @@
 
 	(0, _plugify2.default)('masonry_grid', Grid, {
 	  gridWrapper: '.grid__wrapper',
-	  gridItem: '.grid__item',
-	  gridImage: '.grid__image',
-	  overlayWrapper: '.overlay__wrapper',
-	  overlayItem: '.overlay__item',
-	  overlayContainer: '#overlay',
-	  activated: 'active'
+	  gridItem: '.grid__item'
 	});
 
 /***/ },
@@ -12919,6 +12820,161 @@
 
 /***/ },
 /* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _plugify = __webpack_require__(2);
+
+	var _plugify2 = _interopRequireDefault(_plugify);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Overlay = function () {
+	  function Overlay(el, options) {
+	    _classCallCheck(this, Overlay);
+
+	    this.$el = $(el);
+	    this.options = options;
+
+	    this.$gridImage = $(this.options.gridImage);
+	    this.$gridItem = $(this.options.gridItem);
+	    this.$gridWrapper = $(this.options.gridWrapper);
+
+	    this.$overlayItem = $(this.options.overlayItem);
+	    this.$overlayWrapper = $(this.options.overlayWrapper);
+	    this.$overlayContainer = $(this.options.overlayContainer);
+
+	    this.$el.on('load', $.proxy(this.init, this));
+	    this.$el.on('load', $.proxy(this.openImage, this));
+	    this.$el.on('keyup', $.proxy(this.keypress, this));
+
+	    $('#overlay-show').on('click', $.proxy(this.open, this));
+	    $('#overlay-hide').on('click', $.proxy(this.close, this));
+	  }
+
+	  _createClass(Overlay, [{
+	    key: 'init',
+	    value: function init() {
+	      this.clone();
+	      this.alter();
+	    }
+	  }, {
+	    key: 'clone',
+	    value: function clone() {
+	      this.$gridItem.each(function () {
+	        $(this).clone().appendTo('.overlay__wrapper');
+	      });
+	    }
+	  }, {
+	    key: 'alter',
+	    value: function alter() {
+	      var $overlayItem = $(this.options.overlayWrapper).find(this.options.gridItem);
+	      var $overlayImage = $overlayItem.find(this.options.gridImage);
+
+	      $overlayItem.each(function () {
+	        $(this).removeClass('grid__item').addClass('overlay__item');
+	      });
+
+	      $overlayImage.each(function () {
+	        var data = $(this).attr('data-original');
+	        $(this).attr('src', data).removeClass('grid__image').addClass('overlay__image');
+	      });
+	    }
+	  }, {
+	    key: 'overlay',
+	    value: function overlay(e) {
+	      if (e) {
+	        e.preventDefault();
+	      }
+	      this.open();
+	    }
+	  }, {
+	    key: 'open',
+	    value: function open() {
+	      var _this = this;
+
+	      this.$overlayContainer.scrollLeft(0).removeClass('visibility-hidden');
+	      this.$overlayWrapper.removeClass('fade-out');
+	      setTimeout(function () {
+	        $(_this.options.overlayItem).addClass(_this.options.activated);
+	      }, 675);
+	    }
+	  }, {
+	    key: 'openImage',
+	    value: function openImage() {
+	      this.$gridImage.each(function () {
+	        $(this).on('click', function (e) {
+	          if (e) {
+	            e.preventDefault();
+	          }
+
+	          var src = $(this).closest('li').index() + 1;
+	          var dist = $('.overlay__item:nth-child(' + src + ')').offset().left;
+	          var left = 229;
+
+	          if ($(window).width() > 1024) {
+	            $('#overlay').scrollLeft(dist - left).removeClass('visibility-hidden');
+
+	            setTimeout(function () {
+	              $('.overlay__item').addClass('active');
+	            }, 675);
+
+	            $('.overlay__wrapper').removeClass('fade-out fade-in');
+
+	            setTimeout(function () {
+	              $('html').addClass('no-scroll');
+	            }, 675);
+	          }
+	        });
+	      });
+	    }
+	  }, {
+	    key: 'keypress',
+	    value: function keypress(e) {
+	      if (e.keyCode === 27) {
+	        this.close();
+	      }
+	    }
+	  }, {
+	    key: 'close',
+	    value: function close() {
+	      this.$overlayWrapper.addClass('fade-out');
+	      $(this.options.overlayItem).removeClass(this.options.activated);
+	      this.$overlayContainer.delay(675).fadeTo(600, 0, function () {
+	        $(this).addClass('visibility-hidden').css('opacity', '1').scrollLeft(0);
+	      });
+
+	      $('html').removeClass('no-scroll');
+	    }
+	  }, {
+	    key: 'destroy',
+	    value: function destroy() {
+	      this.$el.off('keyup', this.keypress);
+	      $('#overlay-show').off('click', this.open);
+	      $('#overlay-hide').off('click', this.close);
+	    }
+	  }]);
+
+	  return Overlay;
+	}();
+
+	(0, _plugify2.default)('overlay', Overlay, {
+	  gridWrapper: '.grid__wrapper',
+	  gridItem: '.grid__item',
+	  gridImage: '.grid__image',
+	  overlayWrapper: '.overlay__wrapper',
+	  overlayItem: '.overlay__item',
+	  overlayContainer: '#overlay',
+	  activated: 'active'
+	});
+
+/***/ },
+/* 16 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -14708,7 +14764,7 @@
 	});
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports) {
 
 	'use strict';
