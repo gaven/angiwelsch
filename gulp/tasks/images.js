@@ -6,20 +6,18 @@ const $ = loadPlugins();
 
 const images = () => {
   return gulp.src('./images/uploads/*')
+    .pipe($.changed('./thumbs/small/images/uploads/'))
     .pipe(resize({
-      height: 630,
-      crop: false,
-      upscale: false,
-      quality: 0.8
+      height: 630
     }))
     .pipe(gulp.dest('./thumbs/small/images/uploads/'))
+    .pipe($.changed('./thumbs/large/images/uploads/'))
     .pipe(resize({
-      height: 1304,
-      crop: false,
-      upscale: false,
-      quality: 0.8
+      height: 1404
     }))
     .pipe(gulp.dest('./thumbs/large/images/uploads/'))
 };
 
 gulp.task('build:images', images);
+
+export {images};
