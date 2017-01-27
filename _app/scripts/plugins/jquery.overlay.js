@@ -19,6 +19,7 @@ class Overlay {
 
     $('#overlay-show').on('click', $.proxy(this.open, this));
     $('#overlay-hide').on('click', $.proxy(this.close, this));
+    $('#overlay-close').on('click', $.proxy(this.close, this));
   }
 
   init () {
