@@ -12848,6 +12848,7 @@
 	    this.$overlayItem = $(this.options.overlayItem);
 	    this.$overlayWrapper = $(this.options.overlayWrapper);
 	    this.$overlayContainer = $(this.options.overlayContainer);
+	    this.$overlayClose = $(this.options.overlayClose);
 
 	    this.$el.on('load', $.proxy(this.init, this));
 	    this.$el.on('load', $.proxy(this.openImage, this));
@@ -12855,6 +12856,7 @@
 
 	    $('#overlay-show').on('click', $.proxy(this.open, this));
 	    $('#overlay-hide').on('click', $.proxy(this.close, this));
+	    $('#overlay-close').on('click', $.proxy(this.close, this));
 	  }
 
 	  _createClass(Overlay, [{
@@ -12943,7 +12945,13 @@
 	  }, {
 	    key: 'close',
 	    value: function close() {
+	      var _this2 = this;
+
 	      this.$overlayWrapper.addClass('fade-out');
+	      this.$overlayClose.addClass('fade-out');
+	      setTimeout(function () {
+	        _this2.$overlayClose.removeClass('fade-out');
+	      }, 1275);
 	      $(this.options.overlayItem).removeClass(this.options.activated);
 	      this.$overlayContainer.delay(675).fadeTo(600, 0, function () {
 	        $(this).addClass('visibility-hidden').css('opacity', '1').scrollLeft(0);
@@ -12970,6 +12978,7 @@
 	  overlayWrapper: '.overlay__wrapper',
 	  overlayItem: '.overlay__item',
 	  overlayContainer: '#overlay',
+	  overlayClose: '#overlay-close',
 	  activated: 'active'
 	});
 

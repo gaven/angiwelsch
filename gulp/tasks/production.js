@@ -1,6 +1,7 @@
 import cp from 'child_process';
 import browsersync from 'browser-sync';
 import gulp from 'gulp';
+import {images} from './images';
 import loadPlugins from 'gulp-load-plugins';
 
 const reload = browsersync.reload;
@@ -33,6 +34,7 @@ const minifyAssets = () => {
   minifyHTML();
   minifyCSS();
   minifyJS();
+  images();
 };
 
 gulp.task('build:minify', minifyAssets);
