@@ -12,6 +12,7 @@ class Overlay {
     this.$overlayItem = $(this.options.overlayItem);
     this.$overlayWrapper = $(this.options.overlayWrapper);
     this.$overlayContainer = $(this.options.overlayContainer);
+    this.$overlayClose = $(this.options.overlayClose);
 
     this.$el.on('load', $.proxy(this.init, this));
     this.$el.on('load', $.proxy(this.openImage, this));
@@ -107,6 +108,10 @@ class Overlay {
 
   close () {
     this.$overlayWrapper.addClass('fade-out');
+    this.$overlayClose.addClass('fade-out');
+    setTimeout(() => {
+      this.$overlayClose.removeClass('fade-out');
+    }, 1275);
     $(this.options.overlayItem).removeClass(this.options.activated);
     this.$overlayContainer
       .delay(675)
@@ -134,5 +139,6 @@ plugify('overlay', Overlay, {
   overlayWrapper: '.overlay__wrapper',
   overlayItem: '.overlay__item',
   overlayContainer: '#overlay',
+  overlayClose: '#overlay-close',
   activated: 'active'
 });
