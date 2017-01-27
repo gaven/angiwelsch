@@ -7,6 +7,29 @@
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <link rel="shortcut icon" href="/favicon.ico">
 
+  <meta name="robots" content="index,follow,noodp">
+  <meta name="googlebot" content="index,follow">
+  <meta name="google" content="notranslate">
+  <meta name="generator" content="Jekyll">
+  <meta name="subject" content="The portfolio website of Angi Welsh - a Los Angeles and New York based photographer">
+  <meta name="abstract" content="A website to showcase the photographs of Angi Welsch.">
+  <meta name="coverage" content="Worldwide">
+  <meta name="distribution" content="Global">
+  <meta name="rating" content="General">
+
+  <meta property="og:url" content="http://angiwelsch.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Angi Welsch">
+  <meta property="og:image" content="/assets/images/og-image.jpg">
+  <meta property="og:description" content="The portfolio website of Angi Welsh - a Los Angeles and New York based photographer">
+  <meta property="og:site_name" content="Angi Welsch">
+  <meta property="og:locale" content="en_US">
+
+  <link rel="icon" href="favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="favicons/favicon-96x96.png" sizes="96x96" type="image/png">
+  <link rel="icon" href="favicon/favicon-196x196.png" sizes="196x196" type="image/png">
+
   {% if jekyll.environment == "production" %}
   <link rel="stylesheet" href="{{ "/css/styles.min.css" | prepend: site.baseurl }}">
   {% else %}
