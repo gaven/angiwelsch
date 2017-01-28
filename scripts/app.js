@@ -64,7 +64,7 @@
 
 	$(function () {
 	  $('.site-header__toggle').toggle();
-	  $(window).overlay();
+	  $(document).overlay();
 
 	  $('.video__item > a').magnificPopup({
 	    type: 'iframe',
