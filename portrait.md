@@ -3,8 +3,8 @@ title: Portrait
 layout: default
 order: 3
 images:
-- "/images/uploads/1_jhannah_portrait-1-of-1.jpg"
 - "/images/uploads/3_abdullah2_wr.jpg"
+- "/images/uploads/1_jhannah_portrait-1-of-1.jpg"
 - "/images/uploads/4_gabbyportraitrabbit_wr.jpg"
 - "/images/uploads/5_bocillaboy_wr-1-of-1.jpg"
 - "/images/uploads/6_beccaportraits2_wr.jpg"
