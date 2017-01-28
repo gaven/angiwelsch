@@ -30,14 +30,15 @@
   <link rel="icon" href="favicons/favicon-96x96.png" sizes="96x96" type="image/png">
   <link rel="icon" href="favicon/favicon-196x196.png" sizes="196x196" type="image/png">
 
+  <style>
+  {% include fonts.css %}
+  </style>
+
   {% if jekyll.environment == "production" %}
   <link rel="stylesheet" href="{{ "/css/styles.min.css" | prepend: site.baseurl }}">
   {% else %}
   <link rel="stylesheet" href="{{ "/css/styles.css" | prepend: site.baseurl }}">
   {% endif %}
-  <style>
-    {% include fonts.css %}
-  </style>
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 </head>
