@@ -11,6 +11,7 @@ images:
 - "/images/uploads/5_constance_tulum_wr-4-of-6-1.jpg"
 - "/images/uploads/6_katebrienportrait-4-1.jpg"
 - "/images/uploads/7_sabrina_dimes_wr-1-of-1-1.jpg"
+- "/uploads/2017/01/28/img_8604-1334x1334.jpg"
 - "/images/uploads/8_constance_tulum_wr-6-of-6-1.jpg"
 - "/images/uploads/9_20151021_oldnavy_s08_2081retouched-2.jpg"
 - "/images/uploads/10_lera_selects-16crop_wr-2.jpg"
