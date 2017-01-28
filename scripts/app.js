@@ -48,7 +48,9 @@
 
 	__webpack_require__(1);
 
-	__webpack_require__(3);
+	var _jquery = __webpack_require__(3);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
 
 	__webpack_require__(15);
 
@@ -62,7 +64,6 @@
 
 	$(function () {
 	  $('.site-header__toggle').toggle();
-	  $(window).masonry_grid();
 	  $(window).overlay();
 
 	  $('.video__item > a').magnificPopup({
@@ -72,6 +73,7 @@
 	  });
 
 	  new _activeNav2.default();
+	  new _jquery2.default();
 	});
 
 /***/ },
@@ -166,6 +168,10 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	__webpack_require__(4);
@@ -178,10 +184,6 @@
 
 	var _jqueryBridget2 = _interopRequireDefault(_jqueryBridget);
 
-	var _plugify = __webpack_require__(2);
-
-	var _plugify2 = _interopRequireDefault(_plugify);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -193,21 +195,16 @@
 	    this.$el = el;
 	    this.options = options;
 
-	    this.$gridItem = $(this.options.gridItem);
-	    this.$gridWrapper = $(this.options.gridWrapper);
-
 	    (0, _jqueryBridget2.default)('masonry', _masonryLayout2.default, $);
-	    this.$el.on('load', $.proxy(this.init, this));
+	    this.init();
 	  }
 
 	  _createClass(Grid, [{
 	    key: 'init',
 	    value: function init() {
-	      var _this = this;
-
-	      this.$gridWrapper.imagesLoaded(function () {
-	        _this.$gridItem.addClass('loaded');
-	        _this.$gridWrapper.masonry();
+	      $('.grid__wrapper').imagesLoaded(function () {
+	        $('.grid__item').addClass('loaded');
+	        $('.grid__wrapper').masonry();
 	      });
 	    }
 	  }]);
@@ -215,10 +212,7 @@
 	  return Grid;
 	}();
 
-	(0, _plugify2.default)('masonry_grid', Grid, {
-	  gridWrapper: '.grid__wrapper',
-	  gridItem: '.grid__item'
-	});
+	exports.default = Grid;
 
 /***/ },
 /* 4 */
