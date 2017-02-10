@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: New Work
 layout: default
 order: 1
 images:
