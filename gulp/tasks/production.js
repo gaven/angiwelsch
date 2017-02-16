@@ -1,11 +1,34 @@
 import cp from 'child_process';
 import browsersync from 'browser-sync';
 import gulp from 'gulp';
-import {images} from './images';
+import resize from 'gulp-image-resize';
 import loadPlugins from 'gulp-load-plugins';
 
 const reload = browsersync.reload;
 const $ = loadPlugins();
+
+const smallImages = () => {
+  return gulp.src('./images/uploads/*')
+    .pipe($.changed('./thumbs/small/images/uploads/'))
+    .pipe(resize({
+      height: 630
+    }))
+    .pipe(gulp.dest('./thumbs/small/images/uploads/'));
+};
+
+const largeImages = () => {
+  return gulp.src('./images/uploads/*')
+  .pipe($.changed('./thumbs/large/images/uploads/'))
+  .pipe(resize({
+    height: 1404
+  }))
+  .pipe(gulp.dest('./thumbs/large/images/uploads/'));
+};
+
+const images = () => {
+  smallImages();
+  largeImages();
+};
 
 const minifyHTML = () => {
   return gulp.src('./_site/**/*.html')
