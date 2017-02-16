@@ -49,6 +49,5 @@ const jekyllProduction = (done) => {
   .on('close', done);
 };
 
-gulp.task('build:jekyll', jekyllProduction);
-
-gulp.task('build:production', ['build:minify', 'build:jekyll'], minifyHTML);
+gulp.task('build:assets', ['build:minify'], jekyllProduction);
+gulp.task('build:production', ['build:assets'], minifyHTML);
