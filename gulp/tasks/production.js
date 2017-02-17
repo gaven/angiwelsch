@@ -3,32 +3,10 @@ import browsersync from 'browser-sync';
 import gulp from 'gulp';
 import resize from 'gulp-image-resize';
 import loadPlugins from 'gulp-load-plugins';
+import { images } from './images';
 
 const reload = browsersync.reload;
 const $ = loadPlugins();
-
-const smallImages = () => {
-  return gulp.src('./images/uploads/*')
-    .pipe($.changed('./thumbs/small/images/uploads/'))
-    .pipe(resize({
-      height: 630
-    }))
-    .pipe(gulp.dest('./thumbs/small/images/uploads/'));
-};
-
-const largeImages = () => {
-  return gulp.src('./images/uploads/*')
-  .pipe($.changed('./thumbs/large/images/uploads/'))
-  .pipe(resize({
-    height: 1404
-  }))
-  .pipe(gulp.dest('./thumbs/large/images/uploads/'));
-};
-
-const images = () => {
-  smallImages();
-  largeImages();
-};
 
 const minifyHTML = () => {
   return gulp.src('./_site/**/*.html')
@@ -56,7 +34,8 @@ const minifyJS = () => {
 const minifyAssets = () => {
   minifyCSS();
   minifyJS();
-  images();
+  images.smallImages();
+  images.largeImages();
 };
 
 gulp.task('build:minify', minifyAssets);
