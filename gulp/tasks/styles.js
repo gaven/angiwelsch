@@ -28,7 +28,7 @@ const styles = () => {
     .pipe(group())
     .pipe($.rename({extname: '.css'}))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('./css'))
+    .pipe(gulp.dest('./css'));
 };
 
 gulp.task('build:styles', styles);
