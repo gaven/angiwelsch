@@ -9,8 +9,7 @@ const watch = () => {
   gulp.watch(['./_app/styles/**/*.scss'], ['build:styles']);
   gulp.watch(['./_app/scripts/**/*.js'], ['build:scripts']);
   gulp.watch(['./images/uploads'], ['build:images']);
-  gulp.watch(['**/*.html', '**/*.md', '**/*.yml', '!_site/**/*.*'], ['build:reload']);
-  gulp.watch(['./css/*.css', './scripts/*.js'], ['build:reload']);
+  gulp.watch(['**/*.html', '**/*.md', '**/*.yml', '!_site/**/*.*', './css/*.css', './scripts/*.js'], ['build:reload']);
 };
 
 gulp.task('default', ['browser-sync'], watch);
