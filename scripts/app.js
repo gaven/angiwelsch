@@ -174,7 +174,9 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	__webpack_require__(4);
+	var _imagesloaded = __webpack_require__(4);
+
+	var _imagesloaded2 = _interopRequireDefault(_imagesloaded);
 
 	var _masonryLayout = __webpack_require__(6);
 
@@ -189,11 +191,8 @@
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var Grid = function () {
-	  function Grid(el, options) {
+	  function Grid() {
 	    _classCallCheck(this, Grid);
-
-	    this.$el = el;
-	    this.options = options;
 
 	    (0, _jqueryBridget2.default)('masonry', _masonryLayout2.default, $);
 	    this.init();

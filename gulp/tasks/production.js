@@ -1,4 +1,3 @@
-import browsersync from 'browser-sync';
 import cp from 'child_process';
 import gulp from 'gulp';
 import loadPlugins from 'gulp-load-plugins';
@@ -47,13 +46,13 @@ const jekyllProd = done => {
 
 gulp.task('jekyllProd', jekyllProd);
 
-const production = callback => {
+const production = done => {
   sequence('minifyCSS',
            'minifyJS',
            'build:images',
            'jekyllProd',
            'minifyHTML',
-           callback
+           done
   );
 };
 

@@ -1,12 +1,9 @@
-import 'imagesloaded';
+import imagesLoaded from 'imagesloaded';
 import Masonry from 'masonry-layout';
 import jQueryBridget from 'jquery-bridget';
 
 class Grid {
-  constructor (el, options) {
-    this.$el = el;
-    this.options = options;
-
+  constructor () {
     jQueryBridget('masonry', Masonry, $);
     this.init();
   }
