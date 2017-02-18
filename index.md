@@ -10,7 +10,6 @@ images:
 - "/images/uploads/test_barbara-1cropped-1067x1334.jpg"
 - "/images/uploads/5_constance_tulum_wr-4-of-6-1.jpg"
 - "/images/uploads/6_katebrienportrait-4-1.jpg"
-- "/images/uploads/img_8604-1334x1334-2.jpg"
 - "/images/uploads/7_sabrina_dimes_wr-1-of-1-1.jpg"
 - "/images/uploads/8_constance_tulum_wr-6-of-6-1.jpg"
 - "/images/uploads/9_20151021_oldnavy_s08_2081retouched-2.jpg"
@@ -70,5 +69,4 @@ images:
 - "/images/uploads/64_maltamadewell_wr-1.jpg"
 - "/images/uploads/65_julia_uk-1-of-1-1.jpg"
 - "/images/uploads/66_karsyn_wr-1-of-1-1.jpg"
-- "/images/uploads/8_constance_tulum_wr-6-of-6-1-5.jpg"
 ---

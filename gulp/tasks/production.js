@@ -1,11 +1,9 @@
-import cp from 'child_process';
 import browsersync from 'browser-sync';
+import cp from 'child_process';
 import gulp from 'gulp';
-import resize from 'gulp-image-resize';
 import loadPlugins from 'gulp-load-plugins';
-import { images } from './images';
+import sequence from 'run-sequence';
 
-const reload = browsersync.reload;
 const $ = loadPlugins();
 
 const minifyHTML = () => {
@@ -13,9 +11,10 @@ const minifyHTML = () => {
     .pipe($.htmlmin({
       collapseWhitespace: true
     }))
-    .pipe(gulp.dest('./_site/'))
-    .pipe(reload({stream: true}));
+    .pipe(gulp.dest('./_site/'));
 };
+
+gulp.task('minifyHTML', minifyHTML);
 
 const minifyCSS = () => {
   return gulp.src('./css/styles.css')
@@ -24,6 +23,8 @@ const minifyCSS = () => {
   .pipe(gulp.dest('./css'));
 };
 
+gulp.task('minifyCSS', minifyCSS);
+
 const minifyJS = () => {
   return gulp.src('./scripts/app.js')
   .pipe($.uglify({onError: $.util.log}))
@@ -31,16 +32,9 @@ const minifyJS = () => {
   .pipe(gulp.dest('./scripts'));
 };
 
-const minifyAssets = () => {
-  minifyCSS();
-  minifyJS();
-  images.smallImages();
-  images.largeImages();
-};
+gulp.task('minifyJS', minifyJS);
 
-gulp.task('build:minify', minifyAssets);
-
-const jekyllProduction = (done) => {
+const jekyllProd = done => {
   const productionEnv = process.env;
   productionEnv.JEKYLL_ENV = 'production';
 
@@ -51,5 +45,16 @@ const jekyllProduction = (done) => {
   .on('close', done);
 };
 
-gulp.task('build:assets', ['build:minify'], jekyllProduction);
-gulp.task('build:production', ['build:assets'], minifyHTML);
+gulp.task('jekyllProd', jekyllProd);
+
+const production = callback => {
+  sequence('minifyCSS',
+           'minifyJS',
+           'build:images',
+           'jekyllProd',
+           'minifyHTML',
+           callback
+  );
+};
+
+gulp.task('build:production', production);

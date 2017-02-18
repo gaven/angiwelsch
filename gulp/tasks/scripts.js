@@ -17,7 +17,7 @@ const scripts = () => {
       }
     }))
     .pipe($.rename('app.js'))
-    .pipe(gulp.dest('./scripts'))
+    .pipe(gulp.dest('./scripts'));
 };
 
 gulp.task('build:scripts', scripts);
