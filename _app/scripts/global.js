@@ -1,6 +1,6 @@
 import './plugins/jquery.toggle';
 import Grid from './plugins/jquery.grid';
-import Overlay from './plugins/overlay';
+import Overlay from './plugins/jquery.overlay';
 import './vendor/lightbox';
 import Active from './utils/active-nav';
 

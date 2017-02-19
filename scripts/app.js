@@ -52,9 +52,9 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _overlay = __webpack_require__(15);
+	var _jquery3 = __webpack_require__(15);
 
-	var _overlay2 = _interopRequireDefault(_overlay);
+	var _jquery4 = _interopRequireDefault(_jquery3);
 
 	__webpack_require__(16);
 
@@ -75,7 +75,7 @@
 
 	  new _activeNav2.default();
 	  new _jquery2.default();
-	  new _overlay2.default();
+	  new _jquery4.default();
 	});
 
 /***/ },
