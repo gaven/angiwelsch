@@ -14,18 +14,14 @@ class Overlay {
     this.$overlayContainer = $(this.options.overlayContainer);
     this.$overlayClose = $(this.options.overlayClose);
 
-    this.$el.on('load', $.proxy(this.init, this));
+    this.$el.one('load', $.proxy(this.clone, this));
+    this.$el.one('load', $.proxy(this.alter, this));
     this.$el.on('load', $.proxy(this.openImage, this));
     this.$el.on('keyup', $.proxy(this.keypress, this));
 
     $('#overlay-show').on('click', $.proxy(this.open, this));
     $('#overlay-hide').on('click', $.proxy(this.close, this));
     $('#overlay-close').on('click', $.proxy(this.close, this));
-  }
-
-  init () {
-    this.clone();
-    this.alter();
   }
 
   clone () {
