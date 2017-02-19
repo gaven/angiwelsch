@@ -1,48 +1,35 @@
-import plugify from '../utils/plugify';
-
 class Overlay {
-  constructor (el, options) {
-    this.$el = $(el);
-    this.options = options;
+  constructor () {
+    this.init();
+    this.openImage();
 
-    this.$gridImage = $(this.options.gridImage);
-    this.$gridItem = $(this.options.gridItem);
-    this.$gridWrapper = $(this.options.gridWrapper);
-
-    this.$overlayItem = $(this.options.overlayItem);
-    this.$overlayWrapper = $(this.options.overlayWrapper);
-    this.$overlayContainer = $(this.options.overlayContainer);
-    this.$overlayClose = $(this.options.overlayClose);
-
-    this.$el.on('load', $.proxy(this.init, this));
-    this.$el.on('load', $.proxy(this.openImage, this));
-    this.$el.on('keyup', $.proxy(this.keypress, this));
-
-    $('#overlay-show').on('click', $.proxy(this.open, this));
-    $('#overlay-hide').on('click', $.proxy(this.close, this));
-    $('#overlay-close').on('click', $.proxy(this.close, this));
+    $('#overlay-show').on('click', this.open);
+    $('#overlay-hide, #overlay-close').on('click', this.close);
+    $(window).on('keyup', $.proxy(this.keyPress, this));
   }
 
   init () {
-    this.clone();
-    this.alter();
+    $.when(this.clone()).done(() => {
+      this.alter();
+    });
   }
 
   clone () {
-    this.$gridItem.each(function () {
+    $('.grid__item').each(function () {
       $(this).clone().appendTo('.overlay__wrapper');
     });
   }
 
   alter () {
-    const $overlayItem = $(this.options.overlayWrapper).find(this.options.gridItem);
-    const $overlayImage = $overlayItem.find(this.options.gridImage);
+    const $overlayItem = $('.overlay__wrapper').find('.grid__item');
 
     $overlayItem.each(function () {
       $(this)
         .removeClass('grid__item')
         .addClass('overlay__item');
     });
+
+    const $overlayImage = $('.overlay__item').find('.grid__image');
 
     $overlayImage.each(function () {
       const data = $(this).attr('data-original');
@@ -61,17 +48,17 @@ class Overlay {
   }
 
   open () {
-    this.$overlayContainer
+    $('#overlay')
       .scrollLeft(0)
       .removeClass('visibility-hidden');
-    this.$overlayWrapper.removeClass('fade-out');
+    $('.overlay__wrapper').removeClass('fade-out');
     setTimeout(() => {
-      $(this.options.overlayItem).addClass(this.options.activated);
+      $('.overlay__item').addClass('active');
     }, 675);
   }
 
   openImage () {
-    this.$gridImage.each(function () {
+    $('.grid__image').each(function () {
       $(this).on('click', function (e) {
         if (e) {
           e.preventDefault();
@@ -100,20 +87,16 @@ class Overlay {
     });
   }
 
-  keypress (e) {
-    if (e.keyCode === 27) {
-      this.close();
-    }
-  }
-
   close () {
-    this.$overlayWrapper.addClass('fade-out');
-    this.$overlayClose.addClass('fade-out');
+    $('.overlay__wrapper').addClass('fade-out');
+    $('#overlay-close').addClass('fade-out');
+
     setTimeout(() => {
-      this.$overlayClose.removeClass('fade-out');
+      $('#overlay-close').removeClass('fade-out');
     }, 1275);
-    $(this.options.overlayItem).removeClass(this.options.activated);
-    this.$overlayContainer
+
+    $('.overlay__item').removeClass('active');
+    $('#overlay')
       .delay(675)
       .fadeTo(600, 0, function () {
         $(this)
@@ -125,20 +108,11 @@ class Overlay {
     $('html').removeClass('no-scroll');
   }
 
-  destroy () {
-    this.$el.off('keyup', this.keypress);
-    $('#overlay-show').off('click', this.open);
-    $('#overlay-hide').off('click', this.close);
+  keyPress (e) {
+    if (e.keyCode === 27) {
+      this.close();
+    }
   }
 }
 
-plugify('overlay', Overlay, {
-  gridWrapper: '.grid__wrapper',
-  gridItem: '.grid__item',
-  gridImage: '.grid__image',
-  overlayWrapper: '.overlay__wrapper',
-  overlayItem: '.overlay__item',
-  overlayContainer: '#overlay',
-  overlayClose: '#overlay-close',
-  activated: 'active'
-});
+export default Overlay;
