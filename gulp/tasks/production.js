@@ -49,6 +49,7 @@ gulp.task('jekyllProd', jekyllProd);
 const production = done => {
   sequence('minifyCSS',
            'minifyJS',
+           'build:thumbs',
            'build:images',
            'jekyllProd',
            'minifyHTML',
