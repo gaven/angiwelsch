@@ -33,15 +33,11 @@ const minifyJS = () => {
 
 gulp.task('minifyJS', minifyJS);
 
-const jekyllProd = done => {
-  const productionEnv = process.env;
-  productionEnv.JEKYLL_ENV = 'production';
-
-  return cp.spawn('jekyll', ['build'], {
-    stdio: 'inherit',
-    env: productionEnv
-  })
-  .on('close', done);
+const jekyllProd = cb => {
+  cp.exec('JEKYLL_ENV=production jekyll build', (err) => {
+    if (err) return cb(err);
+    cb();
+  });
 };
 
 gulp.task('jekyllProd', jekyllProd);
