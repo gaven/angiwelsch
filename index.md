@@ -44,6 +44,7 @@ images:
 - "/images/uploads/37_malgosiaforawsite-wr-1.jpg"
 - "/images/uploads/38_btsdenim_wr-1.jpg"
 - "/images/uploads/40_jimmychoo_accesories_wr-2-of-2-1.jpg"
+- "/images/uploads/rainbowCJ-1-1.jpg"
 - "/images/uploads/41_josie_england_wr-1-of-1-1.jpg"
 - "/images/uploads/42_springpreview_wr-1.jpg"
 - "/images/uploads/43_madewellshirt_wr-1.jpg"
