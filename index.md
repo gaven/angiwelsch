@@ -25,7 +25,6 @@ images:
 - "/images/uploads/18_constance_tulum_97of263-2.jpg"
 - "/images/uploads/19_constance_tulum_wr-1-of-6-2.jpg"
 - "/images/uploads/20_constance_morocco_wr-9-of-10-2.jpg"
-- "/images/uploads/rainbowCJ-1.jpg"
 - "/images/uploads/21_tulumselects22of263_wr-2.jpg"
 - "/images/uploads/22_maltamadewell_wr-2.jpg"
 - "/images/uploads/23_malgosiaforawsite_wr-2.jpg"

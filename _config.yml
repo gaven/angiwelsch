@@ -16,12 +16,12 @@ exclude:
 
 permalink: pretty
 
-# mini_magick:
-#   thumbnail:
-#       source: images/uploads/
-#       destination: thumbs/small/images/uploads/
-#       resize: "630"
-#   large:
-#       source: images/uploads/
-#       destination: thumbs/large/images/uploads/
-#       resize: "x1304"
+mini_magick:
+  thumbnail:
+      source: images/uploads/
+      destination: thumbs/small/images/uploads/
+      resize: "630"
+  large:
+      source: images/uploads/
+      destination: thumbs/large/images/uploads/
+      resize: "x1304"
