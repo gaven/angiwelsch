@@ -36,6 +36,7 @@ images:
 - "/images/uploads/29_meredith_griffithpark-1-of-1-1.jpg"
 - "/images/uploads/30_lera_selects-2crop-1.jpg"
 - "/images/uploads/31_generalstoreshelf-1.jpg"
+- "/images/uploads/rainbowCJ-1-1.jpg"
 - "/images/uploads/32_lera_target_wr-1.jpg"
 - "/images/uploads/33_maltamadewell_wr-1.jpg"
 - "/images/uploads/34_constance_hawaii_wr-1-of-1-1.jpg"
