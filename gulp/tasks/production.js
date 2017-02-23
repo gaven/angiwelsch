@@ -33,20 +33,19 @@ const minifyJS = () => {
 
 gulp.task('minifyJS', minifyJS);
 
-const jekyllProd = cb => {
-  cp.exec('JEKYLL_ENV=production jekyll build', (err) => {
-    if (err) return cb(err);
-    cb();
-  });
-};
-
-gulp.task('jekyllProd', jekyllProd);
+// const jekyllProd = cb => {
+//   cp.exec('JEKYLL_ENV=production jekyll build', (err) => {
+//     if (err) return cb(err);
+//     cb();
+//   });
+// };
+//
+// gulp.task('jekyllProd', jekyllProd);
 
 const production = done => {
   sequence('minifyCSS',
            'minifyJS',
-           'jekyllProd',
-           'minifyHTML',
+          //  'minifyHTML',
            done
   );
 };
