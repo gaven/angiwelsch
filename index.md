@@ -65,6 +65,7 @@ images:
 - "/images/uploads/59_hannahhouse_wr-1.jpg"
 - "/images/uploads/60_lera_selects-10crop_wr-1.jpg"
 - "/images/uploads/61_malgosiaforawsite_wr-1.jpg"
+- "/images/uploads/SoludosOaxaca-180websized.jpg"
 - "/images/uploads/62_maltamadewell_wr-1.jpg"
 - "/images/uploads/63_constance_morocco_wr-1-of-10-1.jpg"
 - "/images/uploads/64_maltamadewell_wr-1.jpg"
