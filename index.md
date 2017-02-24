@@ -32,11 +32,11 @@ images:
 - "/images/uploads/25_generalstore_la-1.jpg"
 - "/images/uploads/26_chloe_keywest_wr-2-of-3-1.jpg"
 - "/images/uploads/27_constance_tulum_wr-5-of-6-1.jpg"
+- "/images/uploads/rainbowCJ-1-1.jpg"
 - "/images/uploads/28_constance_tulum_wr-3-of-6-1.jpg"
 - "/images/uploads/29_meredith_griffithpark-1-of-1-1.jpg"
 - "/images/uploads/30_lera_selects-2crop-1.jpg"
 - "/images/uploads/31_generalstoreshelf-1.jpg"
-- "/images/uploads/rainbowCJ-1-1.jpg"
 - "/images/uploads/32_lera_target_wr-1.jpg"
 - "/images/uploads/33_maltamadewell_wr-1.jpg"
 - "/images/uploads/34_constance_hawaii_wr-1-of-1-1.jpg"
@@ -71,4 +71,5 @@ images:
 - "/images/uploads/64_maltamadewell_wr-1.jpg"
 - "/images/uploads/65_julia_uk-1-of-1-1.jpg"
 - "/images/uploads/66_karsyn_wr-1-of-1-1.jpg"
+- "/images/uploads/rainbowCJ-1-2.jpg"
 ---

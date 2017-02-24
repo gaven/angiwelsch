@@ -1,11 +1,17 @@
 <div class="container">
   <ul class="grid__wrapper fade-in">
     {% for image in page.images %}
-    <li class="grid__item">
-      <img class="grid__image"
-           src="{{ image | prepend: site.thumb_small }}"
-           data-original="{{ image | prepend: site.thumb_large }}">
-    </li>
+      {% if jekyll.environment == "production" %}
+        <li class="grid__item">
+          <img class="grid__image"
+               src="{{ image | prepend: site.thumb_small }}"
+               data-original="{{ image | prepend: site.thumb_large }}">
+        </li>
+      {% else %}
+        <li class="grid__item">
+          <img class="grid__image" src="{{ image }}">
+        </li>
+      {% endif %}
     {% endfor %}
   </ul>
 </div>
