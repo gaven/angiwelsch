@@ -1,3 +1,4 @@
+import cp from 'child_process';
 import gulp from 'gulp';
 import loadPlugins from 'gulp-load-plugins';
 import sequence from 'run-sequence';
@@ -18,7 +19,7 @@ const minifyCSS = () => {
   return gulp.src('./css/styles.css')
   .pipe($.cssnano())
   .pipe($.rename({extname: '.min.css'}))
-  .pipe(gulp.dest('./_site/css'));
+  .pipe(gulp.dest('./css'));
 };
 
 gulp.task('minifyCSS', minifyCSS);
@@ -27,14 +28,30 @@ const minifyJS = () => {
   return gulp.src('./scripts/app.js')
   .pipe($.uglify({onError: $.util.log}))
   .pipe($.rename({extname: '.min.js'}))
-  .pipe(gulp.dest('./_site/scripts'));
+  .pipe(gulp.dest('./scripts'));
 };
 
 gulp.task('minifyJS', minifyJS);
 
+const jekyllProd = done => {
+  const productionEnv = process.env;
+  productionEnv.JEKYLL_ENV = 'production';
+
+  return cp.spawn('jekyll', ['build'], {
+    stdio: 'inherit',
+    env: productionEnv
+  })
+  .on('close', done);
+};
+
+gulp.task('jekyllProd', jekyllProd);
+
 const production = done => {
   sequence('minifyCSS',
            'minifyJS',
+           'build:thumbs',
+           'build:images',
+           'jekyllProd',
            'minifyHTML',
            done
   );
