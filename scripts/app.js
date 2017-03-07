@@ -2261,7 +2261,7 @@
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 	/**
-	 * matchesSelector v2.0.1
+	 * matchesSelector v2.0.2
 	 * matchesSelector( element, '.selector' )
 	 * MIT license
 	 */
@@ -2287,7 +2287,7 @@
 	  'use strict';
 
 	  var matchesMethod = function () {
-	    var ElemProto = Element.prototype;
+	    var ElemProto = window.Element.prototype;
 	    // check for the standard method name first
 	    if (ElemProto.matches) {
 	      return 'matches';
