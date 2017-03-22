@@ -25,6 +25,7 @@ images:
 - "/images/uploads/17_jimmychoo_accesories-1-of-2-2.jpg"
 - "/images/uploads/SoludosOaxaca-127website.jpg"
 - "/images/uploads/18_constance_tulum_97of263-2.jpg"
+- "/images/uploads/MWIndia_Selects-581website.jpg"
 - "/images/uploads/19_constance_tulum_wr-1-of-6-2.jpg"
 - "/images/uploads/20_constance_morocco_wr-9-of-10-2.jpg"
 - "/images/uploads/21_tulumselects22of263_wr-2.jpg"
