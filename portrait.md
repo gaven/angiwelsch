@@ -24,7 +24,6 @@ images:
 - "/images/uploads/19_hannahportrait_wr.jpg"
 - "/images/uploads/18_tryjosh2.jpg"
 - "/images/uploads/20_preemta_nyc_wr-1-of-1.jpg"
-- "/images/uploads/30_adeline_flowerswr-1-of-1.jpg"
 - "/images/uploads/21_sharonvanetten-1wr.jpg"
 - "/images/uploads/22_sharonnyc_wr-1-of-1.jpg"
 - "/images/uploads/PageImage-505162-3220971-iceland030.jpg"
