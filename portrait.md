@@ -9,6 +9,7 @@ images:
 - "/images/uploads/6_beccaportraits2_wr.jpg"
 - "/images/uploads/4_gabbyportraitrabbit_wr.jpg"
 - "/images/uploads/5_bocillaboy_wr-1-of-1.jpg"
+- "/images/uploads/SistersAtHomewebsized.jpg"
 - "/images/uploads/7_sophiachang_wr-1-of-1.jpg"
 - "/images/uploads/8_juan2_wr.jpg"
 - "/images/uploads/9_beccaportrait_wr.jpg"
