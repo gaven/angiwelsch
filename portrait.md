@@ -13,6 +13,7 @@ images:
 - "/images/uploads/8_juan2_wr.jpg"
 - "/images/uploads/9_beccaportrait_wr.jpg"
 - "/images/uploads/10_tessa_studiotour_wr-1-of-1.jpg"
+- "/images/uploads/girlsat17-1websized.jpg"
 - "/images/uploads/EConnerwebsize.jpg"
 - "/images/uploads/11_asli_austin_wr-1-of-1.jpg"
 - "/images/uploads/12_jordan-1-of-1.jpg"
