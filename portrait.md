@@ -32,9 +32,8 @@ images:
 - "/images/uploads/PageImage-505162-3220908-icelandweb_6.JPG"
 - "/images/uploads/PageImage-505162-3220914-icelandweb_1.JPG"
 - "/images/uploads/23_caleb_hemet-1-of-1.jpg"
+- "/images/uploads/4091356000_90dbd82f7c_b.jpg"
 - "/images/uploads/25_beau-1-of-1.jpg"
-- "/images/uploads/26_lailadesk_wr.jpg"
 - "/images/uploads/29_lucius_youreimportant-1-of-1-wr.jpg"
 - "/images/uploads/34_simone_muji_wr-1-of-1.jpg"
-- "/images/uploads/7065212607_b66b271286_z.jpg"
 ---
