@@ -9,6 +9,7 @@ images:
 - "/images/uploads/3_derlyn_laughing_wr-1-of-1-1.jpg"
 - "/images/uploads/4_pineapple_wr-1.jpg"
 - "/images/uploads/laisCRweb.jpg"
+- "/images/uploads/laisportraitCRweb.jpg"
 - "/images/uploads/test_barbara-1cropped-1067x1334.jpg"
 - "/images/uploads/5_constance_tulum_wr-4-of-6-1.jpg"
 - "/images/uploads/7_sabrina_dimes_wr-1-of-1-1.jpg"
