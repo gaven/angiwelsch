@@ -38,7 +38,6 @@ images:
 - "/images/uploads/25_generalstore_la-1.jpg"
 - "/images/uploads/26_chloe_keywest_wr-2-of-3-1.jpg"
 - "/images/uploads/27_constance_tulum_wr-5-of-6-1.jpg"
-- "/images/uploads/rainbowCJ-1-1.jpg"
 - "/images/uploads/28_constance_tulum_wr-3-of-6-1.jpg"
 - "/images/uploads/29_meredith_griffithpark-1-of-1-1.jpg"
 - "/images/uploads/30_lera_selects-2crop-1.jpg"
