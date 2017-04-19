@@ -16,7 +16,6 @@ images:
 - "/images/uploads/Totem_Barbara-3website.jpg"
 - "/images/uploads/laisportraitCRweb.jpg"
 - "/images/uploads/SoludosOaxaca-180websized.jpg"
-- "/images/uploads/R086A_43008_ST17x_088web.jpg"
 - "/images/uploads/13_constance_morocco_wr-6-of-10-2.jpg"
 - "/images/uploads/10_lera_selects-16crop_wr-2.jpg"
 - "/images/uploads/11_derlynpony_wr-2.jpg"
