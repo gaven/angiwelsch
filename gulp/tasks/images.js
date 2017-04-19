@@ -9,7 +9,7 @@ const images = {
     const stream = gulp.src('./images/uploads/*')
       .pipe($.changed('./thumbs/small/images/uploads/'))
       .pipe(resize({
-        height: 630
+        height: 1200
       }))
       .pipe(gulp.dest('./thumbs/small/images/uploads/'));
     return stream;
