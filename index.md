@@ -22,7 +22,6 @@ images:
 - "/images/uploads/11_derlynpony_wr-2.jpg"
 - "/images/uploads/Totem_Barbara-3website.jpg"
 - "/images/uploads/12_tulumbags_wr-2.jpg"
-- "/images/uploads/14_michelle_brooklyn_wr-2.jpg"
 - "/images/uploads/15_constance_morocco_wr-2-of-10-2.jpg"
 - "/images/uploads/16_magda_la-2.jpg"
 - "/images/uploads/alexselects (1 of 1)-4websized.jpg"
