@@ -11,8 +11,7 @@ clients:
 - Jimmy Choo
 - Goop
 email: angiwelsch@gmail.com
-phone: (703) 505-9244
+phone: "(703) 505-9244"
 instagram_username: angi_welsch
-tumblr_username: angiwelsch
-
+tumblr_username: ''
 ---
