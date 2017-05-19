@@ -60,7 +60,7 @@
   position: absolute;
   bottom: 25px;
   display: flex;
-  width: 7.813em;
+  width: 80px;
   justify-content: space-between;
 
   @include media(">=desktop") {
@@ -68,7 +68,7 @@
     top: 8px;
     width: 2em;
     flex-direction: column;
-    height: 7.813em;
+    height: 80px;
   }
 
   @include media(">desktop") {
