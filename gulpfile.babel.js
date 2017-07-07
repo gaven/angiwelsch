@@ -68,7 +68,6 @@ gulp.task('build:scripts', (cb) => {
   cb();
 });
 
-<<<<<<< HEAD
 gulp.task('build:thumbs', (cb) => {
   gulp.src('./images/uploads/*')
     .pipe(changed('./thumbs/small/images/uploads/'))
@@ -78,29 +77,6 @@ gulp.task('build:thumbs', (cb) => {
     .pipe(gulp.dest('./thumbs/small/images/uploads/'));
   cb();
 });
-=======
-gulp.task('build:scripts', scripts);
-
-const images = {
-  thumbs () {
-    const stream = gulp.src('./images/uploads/*')
-      .pipe(resize({
-        height: 1200
-      }))
-      .pipe(gulp.dest('./thumbs/small/images/uploads/'));
-    return stream;
-  },
-
-  images () {
-    const stream = gulp.src('./images/uploads/*')
-      .pipe(resize({
-        height: 1404
-      }))
-      .pipe(gulp.dest('./thumbs/large/images/uploads/'));
-    return stream;
-  }
-};
->>>>>>> Modifies gulpfile
 
 gulp.task('build:images', (cb) => {
   gulp.src('./images/uploads/*')

@@ -5,7 +5,11 @@
   "scripts": {
     "setup": "bundle install && npm install",
     "start": "gulp",
+<<<<<<< HEAD
     "production": "gulp build:production"
+=======
+    "production": "gulp build:production && JEKYLL_ENV=production jekyll build"
+>>>>>>> Changes jekyll command
   },
   "repository": {
     "type": "git",
