@@ -1,23 +1,22 @@
 'use strict';
 
+import autoprefixer from 'autoprefixer';
+import bs from 'browser-sync';
+import changed from 'gulp-changed';
+import cp from 'child_process';
+import group from 'gulp-group-css-media-queries';
 import gulp from 'gulp';
 import gutil from 'gulp-util';
-import sass from 'gulp-sass';
-import autoprefixer from 'autoprefixer';
-import sourcemaps from 'gulp-sourcemaps';
-import group from 'gulp-group-css-media-queries';
 import lost from 'lost';
+import path from 'path';
 import postcss from 'gulp-postcss';
 import rename from 'gulp-rename';
-import webpack from 'webpack-stream';
-import changed from 'gulp-changed';
 import resize from 'gulp-image-resize';
+import sass from 'gulp-sass';
+import sourcemaps from 'gulp-sourcemaps';
 import svgmin from 'gulp-svgmin';
 import svgstore from 'gulp-svgstore';
-import path from 'path';
-import cp from 'child_process';
-import bs from 'browser-sync';
-
+import webpack from 'webpack-stream';
 const reload = bs.reload;
 
 const supported = [
@@ -154,7 +153,7 @@ gulp.task('build:production', (cb) => {
   images.thumbs();
   images.images();
   icons();
-  cb(err);
+  cb();
 });
 
 gulp.task('watch', ['serve'], () => {
