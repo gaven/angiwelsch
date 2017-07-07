@@ -153,8 +153,8 @@ gulp.task('build:production', (cb) => {
   scripts();
   images.thumbs();
   images.images();
-  icons()
-  .on('end', cb);
+  icons();
+  cb(err);
 });
 
 gulp.task('watch', ['serve'], () => {
