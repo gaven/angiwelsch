@@ -5,6 +5,7 @@ order: 1
 images:
 - "/images/uploads/1_derlyn_pinkwall_wr-2.jpg"
 - "/images/uploads/MWIndia_Selects-322webcrop.jpg"
+- "/uploads/2017/07/22/mwsummer_TodosSantosJpg.jpg"
 - "/images/uploads/2_constance_morocco_wr-3-of-10-1.jpg"
 - "/images/uploads/3_derlyn_laughing_wr-1-of-1-1.jpg"
 - "/images/uploads/4_pineapple_wr-1.jpg"
@@ -15,6 +16,7 @@ images:
 - "/images/uploads/7_sabrina_dimes_wr-1-of-1-1.jpg"
 - "/images/uploads/SoludosOaxaca-180websized.jpg"
 - "/images/uploads/8_constance_tulum_wr-6-of-6-1.jpg"
+- "/uploads/2017/07/22/mwsummer_todosSantos2.jpg"
 - "/images/uploads/5_constance_tulum_wr-4-of-6-1.jpg"
 - "/images/uploads/13_constance_morocco_wr-6-of-10-2.jpg"
 - "/images/uploads/laisCRweb.jpg"
