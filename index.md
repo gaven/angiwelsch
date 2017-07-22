@@ -1,11 +1,7 @@
 ---
-title: New Work
-layout: default
-order: 1
 images:
 - "/images/uploads/1_derlyn_pinkwall_wr-2.jpg"
 - "/images/uploads/MWIndia_Selects-322webcrop.jpg"
-- "/uploads/2017/07/22/mwsummer_TodosSantosJpg.jpg"
 - "/images/uploads/2_constance_morocco_wr-3-of-10-1.jpg"
 - "/images/uploads/3_derlyn_laughing_wr-1-of-1-1.jpg"
 - "/images/uploads/4_pineapple_wr-1.jpg"
@@ -13,16 +9,15 @@ images:
 - "/images/uploads/laisportraitCRweb.jpg"
 - "/images/uploads/alexselectscropped4x5web.jpg"
 - "/images/uploads/6_katebrienportrait-4-1.jpg"
+- "/images/uploads/Totem_Barbara-3website.jpg"
 - "/images/uploads/7_sabrina_dimes_wr-1-of-1-1.jpg"
 - "/images/uploads/SoludosOaxaca-180websized.jpg"
 - "/images/uploads/8_constance_tulum_wr-6-of-6-1.jpg"
-- "/uploads/2017/07/22/mwsummer_todosSantos2.jpg"
-- "/images/uploads/5_constance_tulum_wr-4-of-6-1.jpg"
 - "/images/uploads/13_constance_morocco_wr-6-of-10-2.jpg"
+- "/images/uploads/5_constance_tulum_wr-4-of-6-1.jpg"
 - "/images/uploads/laisCRweb.jpg"
 - "/images/uploads/10_lera_selects-16crop_wr-2.jpg"
 - "/images/uploads/11_derlynpony_wr-2.jpg"
-- "/images/uploads/Totem_Barbara-3website.jpg"
 - "/images/uploads/12_tulumbags_wr-2.jpg"
 - "/images/uploads/15_constance_morocco_wr-2-of-10-2.jpg"
 - "/images/uploads/16_magda_la-2.jpg"
@@ -77,4 +72,7 @@ images:
 - "/images/uploads/64_maltamadewell_wr-1.jpg"
 - "/images/uploads/65_julia_uk-1-of-1-1.jpg"
 - "/images/uploads/66_karsyn_wr-1-of-1-1.jpg"
+layout: default
+order: 1
+title: New Work
 ---
