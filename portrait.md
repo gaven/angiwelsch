@@ -1,6 +1,5 @@
 ---
 images:
-- "/uploads/2017/08/04/Screen Shot 2017-07-18 at 1.56.35 PM-1.png"
 - "/images/uploads/1_jhannah_portrait-1-of-1.jpg"
 - "/images/uploads/3_abdullah2_wr.jpg"
 - "/images/uploads/SistersAtHomewebsized.jpg"
