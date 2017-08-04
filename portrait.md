@@ -1,6 +1,5 @@
 ---
 images:
-- "/uploads/2017/08/03/mwsummer_retouch-1-12retouchedweb.jpg"
 - "/images/uploads/1_jhannah_portrait-1-of-1.jpg"
 - "/images/uploads/3_abdullah2_wr.jpg"
 - "/images/uploads/SistersAtHomewebsized.jpg"
