@@ -1,5 +1,6 @@
 ---
 images:
+- "/images/uploads/mwsummer_retouch-1website.jpg"
 - "/images/uploads/mwsummer_retouch-1-12retouchedweb.jpg"
 - "/images/uploads/1_derlyn_pinkwall_wr-2.jpg"
 - "/images/uploads/MWIndia_Selects-322webcrop.jpg"
