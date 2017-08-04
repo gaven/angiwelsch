@@ -170,7 +170,7 @@ gulp.task('reload', ['build:jekyll'], () => {
 });
 
 gulp.task('build:production', ['build:thumbs', 'build:images'], (cb) => {
-  runsequence('build:styles', 'build:scripts', 'build:minifyCSS', 'build:jekyll', 'build:minifyHTML', 'build:move', cb);
+  runsequence('build:styles', 'build:scripts', 'build:minifyCSS', 'build:jekyll', 'build:minifyHTML', cb);
 });
 
 gulp.task('watch', ['serve'], () => {
