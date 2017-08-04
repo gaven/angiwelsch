@@ -20,6 +20,7 @@ import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import svgmin from 'gulp-svgmin';
 import svgstore from 'gulp-svgstore';
+import uglify from 'gulp-uglify';
 import webpack from 'webpack-stream';
 
 const ENV = process.env.npm_lifecycle_event;
@@ -102,9 +103,20 @@ gulp.task('build:minifyHTML', (cb) => {
 gulp.task('build:minifyCSS', (cb) => {
   gulp.src('./css/styles.css')
     .pipe(cssmin())
-    .pipe(rename({suffix: '.min'}))
+    .pipe(rename({
+      suffix: '.min'
+    }))
     .pipe(gulp.dest('./_site/css'));
   cb();
+});
+
+gulp.task('build:minifyJS', (cb) => {
+  gulp.src('./scripts/app.js')
+    .pipe(uglify())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('_site/scripts'));
 });
 
 const icons = () => {
@@ -165,7 +177,7 @@ gulp.task('reload', ['build:jekyll'], () => {
 });
 
 gulp.task('build:production', ['build:styles', 'build:scripts', 'build:jekyll'], (cb) => {
-  runsequence('build:minifyCSS', 'build:minifyHTML', cb);
+  runsequence('build:minifyCSS', 'build:minifyJS', 'build:minifyHTML', 'build:images', 'build:thumbs', cb);
 });
 
 gulp.task('watch', ['serve'], () => {
