@@ -74,21 +74,21 @@ gulp.task('build:scripts', (cb) => {
 
 gulp.task('build:thumbs', (cb) => {
   gulp.src('./images/uploads/*')
-    .pipe(changed('./thumbs/small/images/uploads/'))
+    .pipe(changed('./_site/thumbs/small/images/uploads/'))
     .pipe(resize({
       height: 1200
     }))
-    .pipe(gulp.dest('./thumbs/small/images/uploads/'));
+    .pipe(gulp.dest('./_site/thumbs/small/images/uploads/'));
   cb();
 });
 
 gulp.task('build:images', (cb) => {
   gulp.src('./images/uploads/*')
-    .pipe(changed('./thumbs/large/images/uploads/'))
+    .pipe(changed('./_site/thumbs/large/images/uploads/'))
     .pipe(resize({
       height: 1404
     }))
-    .pipe(gulp.dest('./thumbs/large/images/uploads/'));
+    .pipe(gulp.dest('./_site/thumbs/large/images/uploads/'));
   cb();
 });
 
@@ -102,13 +102,8 @@ gulp.task('build:minifyHTML', (cb) => {
 gulp.task('build:minifyCSS', (cb) => {
   gulp.src('./css/styles.css')
     .pipe(cssmin())
-    .pipe(rename({suffix: '.min'}));
-  cb();
-});
-
-gulp.task('build:move', (cb) => {
-  gulp.src('./thumbs/**/*')
-  .pipe(gulp.dest('./_site/'));
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('./_site/css'));
   cb();
 });
 
@@ -169,8 +164,8 @@ gulp.task('reload', ['build:jekyll'], () => {
   reload();
 });
 
-gulp.task('build:production', ['build:thumbs', 'build:images'], (cb) => {
-  runsequence('build:styles', 'build:scripts', 'build:minifyCSS', 'build:jekyll', 'build:minifyHTML', cb);
+gulp.task('build:production', ['build:styles', 'build:scripts', 'build:jekyll'], (cb) => {
+  runsequence('build:minifyCSS', 'build:minifyHTML', cb);
 });
 
 gulp.task('watch', ['serve'], () => {
