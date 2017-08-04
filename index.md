@@ -1,6 +1,6 @@
 ---
 images:
-- "/uploads/2017/08/03/mwsummer_retouch-1-12retouchedweb.jpg"
+- "/thumbs/small/images/uploads/mwsummer_retouch-1-12retouchedweb.jpg"
 - "/images/uploads/1_derlyn_pinkwall_wr-2.jpg"
 - "/images/uploads/MWIndia_Selects-322webcrop.jpg"
 - "/images/uploads/2_constance_morocco_wr-3-of-10-1.jpg"
