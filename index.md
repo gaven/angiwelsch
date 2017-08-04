@@ -1,7 +1,4 @@
 ---
-title: New Work
-layout: default
-order: 1
 images:
 - "/images/uploads/1_derlyn_pinkwall_wr-2.jpg"
 - "/images/uploads/MWIndia_Selects-322webcrop.jpg"
@@ -75,4 +72,7 @@ images:
 - "/images/uploads/64_maltamadewell_wr-1.jpg"
 - "/images/uploads/65_julia_uk-1-of-1-1.jpg"
 - "/images/uploads/66_karsyn_wr-1-of-1-1.jpg"
+layout: default
+order: 1
+title: New Work
 ---
