@@ -1,25 +1,29 @@
 'use strict';
 
+const reload = bs.reload;
 import autoprefixer from 'autoprefixer';
 import bs from 'browser-sync';
 import changed from 'gulp-changed';
 import cp from 'child_process';
+import cssmin from 'gulp-clean-css';
 import group from 'gulp-group-css-media-queries';
 import gulp from 'gulp';
 import gutil from 'gulp-util';
 import htmlmin from 'gulp-htmlmin';
-import runsequence from 'run-sequence';
 import lost from 'lost';
 import path from 'path';
 import postcss from 'gulp-postcss';
 import rename from 'gulp-rename';
 import resize from 'gulp-image-resize';
+import runsequence from 'run-sequence';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import svgmin from 'gulp-svgmin';
 import svgstore from 'gulp-svgstore';
 import webpack from 'webpack-stream';
-const reload = bs.reload;
+
+const ENV = process.env.npm_lifecycle_event;
+const PROD =  ENV === 'production';
 
 const supported = [
   '> 1%',
@@ -95,6 +99,13 @@ gulp.task('build:minifyHTML', (cb) => {
   cb();
 });
 
+gulp.task('build:minifyCSS', (cb) => {
+  gulp.src('./css/styles.css')
+    .pipe(cssmin())
+    .pipe(rename({suffix: '.min'}));
+  cb();
+});
+
 gulp.task('build:move', (cb) => {
   gulp.src('./thumbs/**/*')
   .pipe(gulp.dest('./_site/'));
@@ -130,7 +141,12 @@ const icons = () => {
 gulp.task('build:svgs', icons);
 
 const jekyll = (cb) => {
-  cp.exec('jekyll build', (err) => {
+  let command = 'jekyll build';
+
+  if (PROD) {
+    command = 'JEKYLL_ENV=production jekyll build';
+  }
+  cp.exec(command, (err) => {
     if (err) return cb(err);
     cb();
   });
@@ -154,7 +170,7 @@ gulp.task('reload', ['build:jekyll'], () => {
 });
 
 gulp.task('build:production', ['build:thumbs', 'build:images'], (cb) => {
-  runsequence('build:styles', 'build:scripts', 'build:jekyll', 'build:minifyHTML', 'build:move', cb);
+  runsequence('build:styles', 'build:scripts', 'build:minifyCSS', 'build:jekyll', 'build:minifyHTML', 'build:move', cb);
 });
 
 gulp.task('watch', ['serve'], () => {
