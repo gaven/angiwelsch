@@ -1,8 +1,6 @@
 ---
-title: Portrait
-layout: default
-order: 3
 images:
+- "/uploads/2017/08/03/mwsummer_retouch-1-12retouchedweb.jpg"
 - "/images/uploads/1_jhannah_portrait-1-of-1.jpg"
 - "/images/uploads/3_abdullah2_wr.jpg"
 - "/images/uploads/SistersAtHomewebsized.jpg"
@@ -39,4 +37,7 @@ images:
 - "/images/uploads/29_lucius_youreimportant-1-of-1-wr.jpg"
 - "/images/uploads/34_simone_muji_wr-1-of-1.jpg"
 - "/images/uploads/Tulumwebsized.jpg"
+layout: default
+order: 3
+title: Portrait
 ---
