@@ -117,6 +117,7 @@ gulp.task('build:minifyJS', (cb) => {
       suffix: '.min'
     }))
     .pipe(gulp.dest('_site/scripts'));
+  cb();
 });
 
 const icons = () => {
