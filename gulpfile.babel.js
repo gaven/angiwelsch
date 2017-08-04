@@ -7,6 +7,8 @@ import cp from 'child_process';
 import group from 'gulp-group-css-media-queries';
 import gulp from 'gulp';
 import gutil from 'gulp-util';
+import htmlmin from 'gulp-htmlmin';
+import runsequence from 'run-sequence';
 import lost from 'lost';
 import path from 'path';
 import postcss from 'gulp-postcss';
@@ -30,9 +32,8 @@ const plugins = [
   lost()
 ];
 
-const styles = () => {
-  const stream = gulp
-    .src('_app/styles/styles.scss')
+gulp.task('build:styles', (cb) => {
+  gulp.src('_app/styles/styles.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: ['sass'],
@@ -40,62 +41,68 @@ const styles = () => {
     }))
     .pipe(postcss(plugins))
     .pipe(group())
-    .pipe(rename({extname: '.css'}))
+    .pipe(rename({
+      extname: '.css'
+    }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./css'));
-  return stream;
-};
+  cb();
+});
 
-gulp.task('build:styles', styles);
-
-const scripts = () => {
-  const stream = gulp
-    .src('./_app/scripts/global.js')
+gulp.task('build:scripts', (cb) => {
+  gulp.src('./_app/scripts/global.js')
     .pipe(webpack({
       module: {
         loaders: [{
           test: /\.js$/,
           loader: 'babel',
           exclude: /node_modules/,
-          query: { compact: false }
+          query: {
+            compact: false
+          }
         }]
       }
     }))
     .pipe(rename('app.js'))
     .pipe(gulp.dest('./scripts'));
-  return stream;
-};
+  cb();
+});
 
-gulp.task('build:scripts', scripts);
+gulp.task('build:thumbs', (cb) => {
+  gulp.src('./images/uploads/*')
+    .pipe(changed('./thumbs/small/images/uploads/'))
+    .pipe(resize({
+      height: 1200
+    }))
+    .pipe(gulp.dest('./thumbs/small/images/uploads/'));
+  cb();
+});
 
-const images = {
-  thumbs () {
-    const stream = gulp.src('./images/uploads/*')
-      .pipe(changed('./thumbs/small/images/uploads/'))
-      .pipe(resize({
-        height: 1200
-      }))
-      .pipe(gulp.dest('./thumbs/small/images/uploads/'));
-    return stream;
-  },
+gulp.task('build:images', (cb) => {
+  gulp.src('./images/uploads/*')
+    .pipe(changed('./thumbs/large/images/uploads/'))
+    .pipe(resize({
+      height: 1404
+    }))
+    .pipe(gulp.dest('./thumbs/large/images/uploads/'));
+  cb();
+});
 
-  images () {
-    const stream = gulp.src('./images/uploads/*')
-      .pipe(changed('./thumbs/large/images/uploads/'))
-      .pipe(resize({
-        height: 1404
-      }))
-      .pipe(gulp.dest('./thumbs/large/images/uploads/'));
-    return stream;
-  }
-};
+gulp.task('build:minifyHTML', (cb) => {
+  gulp.src('./_site/**/*.html')
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('./_site/./'));
+  cb();
+});
 
-gulp.task('build:thumbs', images.thumbs);
-gulp.task('build:images', images.images);
+gulp.task('build:move', (cb) => {
+  gulp.src('./thumbs/**/*')
+  .pipe(gulp.dest('./_site/'));
+  cb();
+});
 
 const icons = () => {
-  const stream = gulp
-    .src('./app/svgs/*.svg')
+  gulp.src('./app/svgs/*.svg')
     .pipe(changed('./app/svgs/*.svg'))
     .pipe(rename({prefix: 'icon-'}))
     .pipe(svgmin((file) => {
@@ -118,7 +125,6 @@ const icons = () => {
     .pipe(svgstore())
     .pipe(rename('svg-defs.html'))
     .pipe(gulp.dest('./includes'));
-  return stream;
 };
 
 gulp.task('build:svgs', icons);
@@ -147,13 +153,8 @@ gulp.task('reload', ['build:jekyll'], () => {
   reload();
 });
 
-gulp.task('build:production', (cb) => {
-  styles();
-  scripts();
-  images.thumbs();
-  images.images();
-  icons();
-  cb();
+gulp.task('build:production', ['build:thumbs', 'build:images'], (cb) => {
+  runsequence('build:styles', 'build:scripts', 'build:jekyll', 'build:minifyHTML', 'build:move', cb);
 });
 
 gulp.task('watch', ['serve'], () => {

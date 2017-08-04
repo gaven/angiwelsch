@@ -13,5 +13,6 @@ exclude:
   - package.json
   - README.md
   - gulp
+  - yarn.lock
 
 permalink: pretty
