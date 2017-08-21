@@ -1,19 +1,20 @@
-import './plugins/jquery.toggle';
-import Grid from './plugins/jquery.grid';
-import Overlay from './plugins/jquery.overlay';
-import './vendor/lightbox';
-import Active from './utils/active-nav';
+import "./plugins/jquery.toggle";
+import Grid from "./plugins/jquery.grid";
+import Overlay from "./plugins/jquery.overlay";
+import "./vendor/lightbox";
+import Active from "./utils/active-nav";
+import "lazysizes";
 
 $(() => {
-  $('.site-header__toggle').toggle();
+  $(".site-header__toggle").toggle();
 
-  $('.video__item > a').magnificPopup({
-    type: 'iframe',
+  $(".video__item > a").magnificPopup({
+    type: "iframe",
     enableEscapeKey: true,
     closeOnBgClick: true
   });
 
-  new Active;
-  new Grid;
-  new Overlay;
+  new Active();
+  new Grid();
+  new Overlay();
 });

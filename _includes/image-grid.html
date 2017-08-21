@@ -1,15 +1,15 @@
 <div class="container">
-  <ul class="grid__wrapper fade-in">
+  <ul class="grid__wrapper">
     {% for image in page.images %}
       {% if jekyll.environment == "production" %}
         <li class="grid__item">
-          <img class="grid__image"
-               src="{{ image | prepend: site.thumb_small }}"
+          <img class="grid__image lazyload"
+               data-src="{{ image | prepend: site.thumb_small }}"
                data-original="{{ image | prepend: site.thumb_large }}">
         </li>
       {% else %}
         <li class="grid__item">
-          <img class="grid__image" src="{{ image }}">
+          <img class="grid__image lazyload" data-src="{{ image }}">
         </li>
       {% endif %}
     {% endfor %}
