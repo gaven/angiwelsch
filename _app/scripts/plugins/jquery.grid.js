@@ -25,6 +25,7 @@ class Grid {
     if (img && img.isLoaded) {
       $(img.img).parent().addClass('loaded');
     }
+
     this.$wrapper.masonry({
       transitionDuration: 0
     });
