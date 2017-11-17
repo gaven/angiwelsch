@@ -7,6 +7,7 @@ images:
 - "/images/uploads/2_constance_morocco_wr-3-of-10-1.jpg"
 - "/images/uploads/3_derlyn_laughing_wr-1-of-1-1.jpg"
 - "/images/uploads/mwsummer_retouch-1-9websitetest.jpg"
+- "/images/uploads/madewellbeauty"
 - "/images/uploads/4_pineapple_wr-1.jpg"
 - "/images/uploads/test_barbara-1cropped-1067x1334.jpg"
 - "/images/uploads/laisportraitCRweb.jpg"
