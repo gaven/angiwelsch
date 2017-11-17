@@ -1,0 +1,48 @@
+---
+hide_body: true
+fields:
+- name: title
+  label: Title
+  type: text
+  hidden: false
+  default: ''
+- name: layout
+  label: Layout
+  type: text
+  hidden: true
+  default: ''
+- name: order
+  label: Order
+  type: text
+  hidden: false
+  default: ''
+- name: bio
+  label: Bio
+  type: text
+  hidden: false
+  default: ''
+- name: clients
+  label: Clients
+  type: list
+  hidden: false
+  default: ''
+- name: email
+  label: Email
+  type: text
+  hidden: false
+  default: ''
+- name: phone
+  label: Phone
+  type: text
+  hidden: false
+  default: ''
+- name: instagram_username
+  label: Instagram username
+  type: text
+  hidden: false
+  default: ''
+- name: tumblr_username
+  label: Tumblr username
+  type: text
+  hidden: false
+  default: ''

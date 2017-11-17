@@ -1,0 +1,31 @@
+---
+pages:
+- portrait.md
+- index.md
+hide_body: true
+fields:
+- name: title
+  label: Title
+  type: text
+  hidden: false
+  default: ''
+  config:
+    required: true
+- name: layout
+  label: Layout
+  type: text
+  hidden: true
+  default: ''
+- name: order
+  label: Order
+  type: text
+  hidden: false
+  default: ''
+  config:
+    required: true
+- name: images
+  label: Images
+  type: image_gallery
+  hidden: false
+  default: ''
+  description: 'Portrait Images: 800 x 1200 | Landscape Images: 1200 x 800'
