@@ -1,10 +1,12 @@
 ---
 images:
+- "/images/uploads/171220_summer18_look03_044CCsummervogue.jpg"
 - "/images/uploads/mwsummer_retouch-1-12retouchedweb.jpg"
 - "/images/uploads/mwsummer_retouch-1website.jpg"
 - "/images/uploads/1_derlyn_pinkwall_wr-2.jpg"
 - "/images/uploads/MWIndia_Selects-322webcrop.jpg"
 - "/images/uploads/2_constance_morocco_wr-3-of-10-1.jpg"
+- "/images/uploads/171220_summer18_look02_066CC.jpg"
 - "/images/uploads/3_derlyn_laughing_wr-1-of-1-1.jpg"
 - "/images/uploads/mwsummer_retouch-1-9websitetest.jpg"
 - "/images/uploads/madewellbeauty"
@@ -12,6 +14,7 @@ images:
 - "/images/uploads/test_barbara-1cropped-1067x1334.jpg"
 - "/images/uploads/laisportraitCRweb.jpg"
 - "/images/uploads/alexselectscropped4x5web.jpg"
+- "/images/uploads/171220_SUMMER18_LOOK06_025.jpg"
 - "/images/uploads/6_katebrienportrait-4-1.jpg"
 - "/images/uploads/mwcabo_socialshare-1webready.jpg"
 - "/images/uploads/Totem_Barbara-3website.jpg"
