@@ -1,10 +1,11 @@
 ---
 images:
-- "/images/uploads/171220_summer18_look03_044CCsummervogue.jpg"
-- "/images/uploads/mwsummer_retouch-1-12retouchedweb.jpg"
+- "/images/uploads/MW_Thailand_Stills-138website.jpg"
 - "/images/uploads/mwsummer_retouch-1website.jpg"
+- "/images/uploads/mwsummer_retouch-1-12retouchedweb.jpg"
 - "/images/uploads/1_derlyn_pinkwall_wr-2.jpg"
 - "/images/uploads/MWIndia_Selects-322webcrop.jpg"
+- "/images/uploads/171220_summer18_look03_044CCsummervogue.jpg"
 - "/images/uploads/2_constance_morocco_wr-3-of-10-1.jpg"
 - "/images/uploads/171220_summer18_look02_066CC.jpg"
 - "/images/uploads/3_derlyn_laughing_wr-1-of-1-1.jpg"
