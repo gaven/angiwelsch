@@ -1,8 +1,7 @@
 ---
-pages:
-- index.md
-- portrait.md
+label: Default
 hide_body: true
+is_partial: false
 fields:
 - name: title
   label: Title
@@ -29,3 +28,6 @@ fields:
   hidden: false
   default: ''
   description: 'Portrait Images: 800 x 1200 | Landscape Images: 1200 x 800'
+pages:
+- index.md
+- portrait.md
