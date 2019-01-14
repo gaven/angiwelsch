@@ -1,5 +1,6 @@
 ---
 images:
+- "/images/uploads/MWJamaicaSelects-359.jpg"
 - "/images/uploads/OinIcelandwebsite.jpg"
 - "/images/uploads/mwsummer_retouch-1-12retouchedweb.jpg"
 - "/images/uploads/mwsummer_retouch-1website.jpg"
