@@ -1,8 +1,8 @@
 ---
 images:
-- "/images/uploads/98190005WBedita.jpg"
-- "/images/uploads/30260009sized.jpg"
 - "/images/uploads/MWJamaicaSelects-359.jpg"
+- "/images/uploads/30260009sized.jpg"
+- "/images/uploads/98190005WBedita.jpg"
 - "/images/uploads/LG_WINTER18_NOV_MM_01_115sized.jpg"
 - "/images/uploads/30260006saved.jpg"
 - "/images/uploads/24730011sized.jpg"
