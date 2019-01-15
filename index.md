@@ -13,6 +13,7 @@ images:
 - "/images/uploads/MWIndia_Selects-322webcrop.jpg"
 - "/images/uploads/3_derlyn_laughing_wr-1-of-1-1.jpg"
 - "/images/uploads/MW_Thailand_Stills-138website.jpg"
+- "/images/uploads/MWIcelandSocial_AliceSelects-16sized.jpg"
 - "/images/uploads/171220_summer18_look03_044CCsummervogue.jpg"
 - "/images/uploads/2_constance_morocco_wr-3-of-10-1.jpg"
 - "/images/uploads/mwcabo_socialshare-1webready.jpg"
