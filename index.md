@@ -1,10 +1,10 @@
 ---
 images:
 - "/images/uploads/98190005WBedita.jpg"
-- "/images/uploads/30260006saved.jpg"
 - "/images/uploads/30260009sized.jpg"
 - "/images/uploads/MWJamaicaSelects-359.jpg"
 - "/images/uploads/LG_WINTER18_NOV_MM_01_115sized.jpg"
+- "/images/uploads/30260006saved.jpg"
 - "/images/uploads/1_derlyn_pinkwall_wr-2.jpg"
 - "/images/uploads/mwsummer_retouch-1-12retouchedweb.jpg"
 - "/images/uploads/OinIcelandwebsite.jpg"
