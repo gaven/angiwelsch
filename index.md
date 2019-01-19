@@ -13,6 +13,7 @@ images:
 - "/images/uploads/mwsummer_retouch-1website.jpg"
 - "/images/uploads/LG_AMP_HOLIDAY18_03_011bwebsized.jpg"
 - "/images/uploads/MWIndia_Selects-322webcrop.jpg"
+- "/images/uploads/30220006web.jpg"
 - "/images/uploads/3_derlyn_laughing_wr-1-of-1-1.jpg"
 - "/images/uploads/MW_Thailand_Stills-138website.jpg"
 - "/images/uploads/MWIcelandSocial_AliceSelects-16sized.jpg"
